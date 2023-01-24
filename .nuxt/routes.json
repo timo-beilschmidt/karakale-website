@@ -2,50 +2,50 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "/home/timo-beilschmidt/repos/karakale-nuxtjs/pages/about.vue",
+    "component": "/home/timo/repos/karakale-website/pages/about.vue",
     "chunkName": "pages/about",
-    "_name": "_280bfa92"
+    "_name": "_2f41e2bc"
   },
   {
     "name": "datenschutz",
     "path": "/datenschutz",
-    "component": "/home/timo-beilschmidt/repos/karakale-nuxtjs/pages/datenschutz.vue",
+    "component": "/home/timo/repos/karakale-website/pages/datenschutz.vue",
     "chunkName": "pages/datenschutz",
-    "_name": "_3c2f0f68"
+    "_name": "_c9c69fdc"
   },
   {
     "name": "galerie",
     "path": "/galerie",
-    "component": "/home/timo-beilschmidt/repos/karakale-nuxtjs/pages/galerie.vue",
+    "component": "/home/timo/repos/karakale-website/pages/galerie.vue",
     "chunkName": "pages/galerie",
-    "_name": "_c6079dc0"
+    "_name": "_a34e926c"
   },
   {
     "name": "impressum",
     "path": "/impressum",
-    "component": "/home/timo-beilschmidt/repos/karakale-nuxtjs/pages/impressum.vue",
+    "component": "/home/timo/repos/karakale-website/pages/impressum.vue",
     "chunkName": "pages/impressum",
-    "_name": "_27ce63fc"
+    "_name": "_54202726"
   },
   {
     "name": "kontakt",
     "path": "/kontakt",
-    "component": "/home/timo-beilschmidt/repos/karakale-nuxtjs/pages/kontakt.vue",
+    "component": "/home/timo/repos/karakale-website/pages/kontakt.vue",
     "chunkName": "pages/kontakt",
-    "_name": "_0c40cd65"
+    "_name": "_1d9d530f"
   },
   {
     "name": "leistungen",
     "path": "/leistungen",
-    "component": "/home/timo-beilschmidt/repos/karakale-nuxtjs/pages/leistungen.vue",
+    "component": "/home/timo/repos/karakale-website/pages/leistungen.vue",
     "chunkName": "pages/leistungen",
-    "_name": "_35bf8dde"
+    "_name": "_4306db27"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/timo-beilschmidt/repos/karakale-nuxtjs/pages/index.vue",
+    "component": "/home/timo/repos/karakale-website/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_47c3d557"
+    "_name": "_4ef9bd81"
   }
 ]

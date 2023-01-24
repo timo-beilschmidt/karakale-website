@@ -36,6 +36,11 @@
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </li>
+                <li class="calendar">
+                    <a href="https://www.tuev-nord.de/de/privatkunden/tuev-stationen/termin-vereinbaren/?stationId=450&cHash=285a040e2ed3f6bde8ca8a99a76e3ce1" class="link" aria-label="Kalendar">
+                        <i class="fa fa-calendar-plus"></i>
+                    </a>
+                </li>
                 <li class="phone">
                     <a href="tel:015737154376" class="link" aria-label="Telefon">
                         <div class="coccoc-alo-ph-circle"></div>
@@ -146,11 +151,13 @@
             background-color: #111c81;
         }
     }
+    .calendar {
+        border-radius: 100%;
+        background-color: #111c81e3;
+    }
     .phone {
         border-radius: 100%;
-        @media #{$small-mobile}{
-            background-color: #111c81;
-        }
+        background-color: #111c81e3;
     }
     .coccoc-alo-ph-circle {
         width: 80px;

@@ -27,6 +27,15 @@ export default {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon_logo.png' },
             { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon_logo.png' }
+        ],
+        script: [
+            // Google Analytics Code
+            {
+                src: "https://www.googletagmanager.com/gtag/js?id=GTM-5GGHFT2",
+                async: true,
+            },
+            // Import analitics.js file
+            { src: "/js/analytics.js" },
         ]
     },
 
