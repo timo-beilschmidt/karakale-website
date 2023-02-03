@@ -4,13 +4,13 @@
             "id": 1,
             "icon": "ion-ios-search",
             "heading": "Unfall-Gutachten",
-            "desc": "Wir begutachten für Sie sämtliche Fahrzeugklassen. Sowohl PKW, LKW, Motorrad als auch Wohnmobile sind Bestandteile unsere Expertise."
+            "desc": "Wir begutachten für Sie sämtliche Fahrzeugklassen. Sowohl PKW, LKW, Motorrad als auch Wohnmobile sind Bestandteile unserer Expertise."
         },
         {
             "id": 2,
             "icon": "ion-ios-information-outline",
             "heading": "Oldtimer-Gutachten",
-            "desc": "Sie wollen ein H-Kennzeichen oder sind am Kauf oder Verkauf klassischer Fahrzeuge interessiert? Dann ist ein Oldtimer-Gutachten das richtige für Sie!"
+            "desc": "Sie wollen ein H-Kennzeichen oder sind am Kauf oder Verkauf klassischer Fahrzeuge interessiert? Dann ist ein Oldtimer-Gutachten das Richtige für Sie!"
         },
         {
             "id": 3,
@@ -29,7 +29,7 @@
             "id": 5,
             "icon": "ion-ios-pricetags-outline",
             "heading": "Wertgutachten",
-            "desc": "Sie haben einen Fahrzeug dessen Wert sie nicht kennen?!? Mit einem Wertgutachten können wir den richtigen Preis für Ihr Fahrzeug finden."
+            "desc": "Sie haben einen Fahrzeug dessen Wert sie nicht kennen?!? Mit einem Wertgutachten können wir den richtigen Preis für Ihr Fahrzeug ermitteln."
         },
         {
             "id": 6,

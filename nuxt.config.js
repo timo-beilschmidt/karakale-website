@@ -29,9 +29,14 @@ export default {
             { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon_logo.png' }
         ],
         script: [
+            // Google Consent Mode
+            {
+                src: "/js/consent.js",
+                "data-cookieconsent": "ignore",
+            },
             // Google Analytics Code
             {
-                src: "https://www.googletagmanager.com/gtag/js?id=GTM-5GGHFT2",
+                src: "https://www.googletagmanager.com/gtag/js?id=GTM-WB4L3K8",
                 async: true,
             },
             // Import analitics.js file
