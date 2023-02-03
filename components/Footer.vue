@@ -242,9 +242,10 @@ export default {
 .cookie-banner {
   width: 40rem;
   max-width: 95%;
-  max-height: 60vh;
-  overflow: scroll;
+  max-height: 70vh;
   border: 0.1rem solid #505050;
+  overflow: auto;
+  margin-right: -15em;
   @media (max-width: (730px)) {
     left: 50%;
     transform: translateX(-50%);
