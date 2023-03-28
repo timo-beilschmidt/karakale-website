@@ -6,8 +6,8 @@
           <div class="hero-content">
             <h1 class="hero-title">Ihre TÜV Prüfstelle in Bonn</h1>
             <!-- <img src="/img/slider/creative-agency-wave.png" alt="wave icon"> -->
-            <form
-              action="https://www.tuev-nord.de/de/privatkunden/tuev-stationen/termin-vereinbaren/?stationId=450&cHash=285a040e2ed3f6bde8ca8a99a76e3ce1"
+            <a
+              href="https://www.tuev-nord.de/de/privatkunden/tuev-stationen/termin-vereinbaren/?stationId=450&cHash=285a040e2ed3f6bde8ca8a99a76e3ce1"
             >
               <button
                 type="submit"
@@ -15,7 +15,7 @@
               >
                 Jetzt Termin vereinbaren
               </button>
-            </form>
+            </a>
             <!-- <h6>WENN ES MAL KRACHT ODER DIE PLAKETTE FEHLT...</h6> -->
           </div>
         </div>
