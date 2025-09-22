@@ -7,7 +7,7 @@
             <h1 class="hero-title">Ihre TÜV Prüfstelle in Bonn</h1>
             <!-- <img src="/img/slider/creative-agency-wave.png" alt="wave icon"> -->
             <a
-              href="https://www.tuev-nord.de/de/privatkunden/tuev-stationen/termin-vereinbaren/?stationId=450&cHash=285a040e2ed3f6bde8ca8a99a76e3ce1"
+              href="https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450&cHash=1bb2662b098812ec6d9a0abc7387d3a7"
             >
               <button
                 type="submit"
@@ -62,7 +62,7 @@
         </li>
         <!-- <li class="calendar">
           <a
-            href="https://www.tuev-nord.de/de/privatkunden/tuev-stationen/termin-vereinbaren/?stationId=450&cHash=285a040e2ed3f6bde8ca8a99a76e3ce1"
+            href="https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450&cHash=1bb2662b098812ec6d9a0abc7387d3a7"
             class="link"
             aria-label="Kalendar"
           >

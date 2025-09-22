@@ -96,7 +96,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "387075a2"
+  "04206eef"
   
 )
 
@@ -160,7 +160,7 @@ var TeamOne_component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "249cbeb8"
+  "526ebcf8"
   
 )
 

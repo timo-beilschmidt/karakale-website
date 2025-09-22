@@ -8,12 +8,12 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/HeroAgency.vue?vue&type=template&id=3b20097b&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home-creative-agency",attrs:{"data-overlay":"2"}},[_vm._ssrNode("<div class=\"container\"><div class=\"row\"><div class=\"col-12\"><div class=\"hero-content\"><h1 class=\"hero-title\">Ihre TÜV Prüfstelle in Bonn</h1> <a href=\"https://www.tuev-nord.de/de/privatkunden/tuev-stationen/termin-vereinbaren/?stationId=450&cHash=285a040e2ed3f6bde8ca8a99a76e3ce1\"><button type=\"submit\" class=\"brook-btn bk-btn-theme btn-sd-size btn-rounded space-between hero-btn\">\n              Jetzt Termin vereinbaren\n            </button></a></div></div></div></div> <div class=\"hero-social\"><ul class=\"social-icon icon-border-rounded icon-size-medium social-vertical text-center\"><li class=\"facebook\"><a href=\"#\" aria-label=\"Facebook\" class=\"link brook-btn\"><i class=\"fab fa-facebook\"></i></a></li> <li class=\"instagram\"><a href=\"https://www.instagram.com/gutachten.karakale/\" aria-label=\"Instagram\" class=\"link brook-btn\"><i class=\"fab fa-instagram\"></i></a></li> <li class=\"mail\"><a href=\"mailto: info@ing-karakale.de\" aria-label=\"E-Mail\" class=\"link brook-btn\"><i class=\"fa fa-envelope\"></i></a></li> <li class=\"whatsapp\"><a href=\"https://wa.me/4915737154376\" aria-label=\"Whatsapp\" class=\"link brook-btn\"><i class=\"fab fa-whatsapp\"></i></a></li> <li class=\"phone\"><a href=\"tel:015737154376\" aria-label=\"Telefon\" class=\"link brook-btn bk-btn-theme\"><div class=\"coccoc-alo-ph-circle\"></div> <i class=\"fa fa-phone\"></i></a></li></ul></div>")])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/HeroAgency.vue?vue&type=template&id=225efcbb&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home-creative-agency",attrs:{"data-overlay":"2"}},[_vm._ssrNode("<div class=\"container\"><div class=\"row\"><div class=\"col-12\"><div class=\"hero-content\"><h1 class=\"hero-title\">Ihre TÜV Prüfstelle in Bonn</h1> <a href=\"https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450&cHash=1bb2662b098812ec6d9a0abc7387d3a7\"><button type=\"submit\" class=\"brook-btn bk-btn-theme btn-sd-size btn-rounded space-between hero-btn\">\n              Jetzt Termin vereinbaren\n            </button></a></div></div></div></div> <div class=\"hero-social\"><ul class=\"social-icon icon-border-rounded icon-size-medium social-vertical text-center\"><li class=\"facebook\"><a href=\"#\" aria-label=\"Facebook\" class=\"link brook-btn\"><i class=\"fab fa-facebook\"></i></a></li> <li class=\"instagram\"><a href=\"https://www.instagram.com/gutachten.karakale/\" aria-label=\"Instagram\" class=\"link brook-btn\"><i class=\"fab fa-instagram\"></i></a></li> <li class=\"mail\"><a href=\"mailto: info@ing-karakale.de\" aria-label=\"E-Mail\" class=\"link brook-btn\"><i class=\"fa fa-envelope\"></i></a></li> <li class=\"whatsapp\"><a href=\"https://wa.me/4915737154376\" aria-label=\"Whatsapp\" class=\"link brook-btn\"><i class=\"fab fa-whatsapp\"></i></a></li> <li class=\"phone\"><a href=\"tel:015737154376\" aria-label=\"Telefon\" class=\"link brook-btn bk-btn-theme\"><div class=\"coccoc-alo-ph-circle\"></div> <i class=\"fa fa-phone\"></i></a></li></ul></div>")])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/HeroAgency.vue?vue&type=template&id=3b20097b&
+// CONCATENATED MODULE: ./components/HeroAgency.vue?vue&type=template&id=225efcbb&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./components/HeroAgency.vue?vue&type=script&lang=js&
 //
@@ -135,7 +135,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "d8cc83a2"
+  "0d576c6f"
   
 )
 

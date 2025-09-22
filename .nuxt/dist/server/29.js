@@ -80,7 +80,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "446bed1c"
+  "7b9e47b2"
   
 )
 
@@ -142,7 +142,7 @@ var BlogOne_component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "070149d3"
+  "34d34813"
   
 )
 

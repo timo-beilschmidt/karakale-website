@@ -2464,7 +2464,7 @@ var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_I
   false,
   null,
   null,
-  "2e67dae8"
+  "760dbc4c"
   
 )
 
@@ -3345,19 +3345,19 @@ function shouldScrollToTop(route) {
 
 
 
-const _2f41e2bc = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 8).then(__webpack_require__.bind(null, 108)));
+const _7e895238 = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 8).then(__webpack_require__.bind(null, 108)));
 
-const _c9c69fdc = () => interopDefault(__webpack_require__.e(/* import() | pages/datenschutz */ 9).then(__webpack_require__.bind(null, 109)));
+const _e74cdae4 = () => interopDefault(__webpack_require__.e(/* import() | pages/datenschutz */ 9).then(__webpack_require__.bind(null, 109)));
 
-const _a34e926c = () => interopDefault(__webpack_require__.e(/* import() | pages/galerie */ 10).then(__webpack_require__.bind(null, 110)));
+const _49823746 = () => interopDefault(__webpack_require__.e(/* import() | pages/galerie */ 10).then(__webpack_require__.bind(null, 110)));
 
-const _54202726 = () => interopDefault(__webpack_require__.e(/* import() | pages/impressum */ 11).then(__webpack_require__.bind(null, 111)));
+const _6a290ebc = () => interopDefault(__webpack_require__.e(/* import() | pages/impressum */ 11).then(__webpack_require__.bind(null, 111)));
 
-const _1d9d530f = () => interopDefault(__webpack_require__.e(/* import() | pages/kontakt */ 13).then(__webpack_require__.bind(null, 112)));
+const _8e7258ea = () => interopDefault(__webpack_require__.e(/* import() | pages/kontakt */ 13).then(__webpack_require__.bind(null, 112)));
 
-const _4306db27 = () => interopDefault(__webpack_require__.e(/* import() | pages/leistungen */ 14).then(__webpack_require__.bind(null, 113)));
+const _b4b48daa = () => interopDefault(__webpack_require__.e(/* import() | pages/leistungen */ 14).then(__webpack_require__.bind(null, 113)));
 
-const _4ef9bd81 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 12).then(__webpack_require__.bind(null, 114)));
+const _c37da606 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 12).then(__webpack_require__.bind(null, 114)));
 
 const emptyFn = () => {};
 
@@ -3370,31 +3370,31 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/about",
-    component: _2f41e2bc,
+    component: _7e895238,
     name: "about"
   }, {
     path: "/datenschutz",
-    component: _c9c69fdc,
+    component: _e74cdae4,
     name: "datenschutz"
   }, {
     path: "/galerie",
-    component: _a34e926c,
+    component: _49823746,
     name: "galerie"
   }, {
     path: "/impressum",
-    component: _54202726,
+    component: _6a290ebc,
     name: "impressum"
   }, {
     path: "/kontakt",
-    component: _1d9d530f,
+    component: _8e7258ea,
     name: "kontakt"
   }, {
     path: "/leistungen",
-    component: _4306db27,
+    component: _b4b48daa,
     name: "leistungen"
   }, {
     path: "/",
-    component: _4ef9bd81,
+    component: _c37da606,
     name: "index"
   }],
   fallback: false
@@ -3566,7 +3566,7 @@ var error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3a4e1217",
-  "66fdc9d9"
+  "0f6db819"
   
 )
 
@@ -3870,7 +3870,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "c61c0b78"
+  "c3852ef8"
   
 )
 
@@ -3927,7 +3927,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "08d09f52"
+  "54fdfd92"
   
 )
 
@@ -4510,7 +4510,7 @@ var Paginate_component = Object(componentNormalizer["a" /* default */])(
   false,
   Paginate_injectStyles,
   "c86c3bb4",
-  "6e3c3de7"
+  "71877c27"
   
 )
 
@@ -5233,7 +5233,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "619e5447"
+  "224003f2"
   
 )
 
@@ -5293,7 +5293,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "cbbe8eba"
+  "30b2f23a"
   
 )
 
@@ -5350,7 +5350,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "6128fd34"
+  "277129b4"
   
 )
 
@@ -5403,7 +5403,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "d5cfd69e"
+  "4ed3631e"
   
 )
 

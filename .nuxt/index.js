@@ -12,8 +12,8 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_bootstrapvue_6fa0a32c from 'nuxt_plugin_bootstrapvue_6fa0a32c' // Source: ./bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_vuesocialsharingplugin_47846c76 from 'nuxt_plugin_vuesocialsharingplugin_47846c76' // Source: ./vue-social-sharing-plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_b3ffdfa0 from 'nuxt_plugin_bootstrapvue_b3ffdfa0' // Source: ./bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_vuesocialsharingplugin_6b34737a from 'nuxt_plugin_vuesocialsharingplugin_6b34737a' // Source: ./vue-social-sharing-plugin.js (mode: 'all')
 import nuxt_plugin_vueawesomeswiper_5ce03f58 from 'nuxt_plugin_vueawesomeswiper_5ce03f58' // Source: ../plugins/vue-awesome-swiper.js (mode: 'all')
 import nuxt_plugin_vuejspaginate_185e95ec from 'nuxt_plugin_vuejspaginate_185e95ec' // Source: ../plugins/vuejs-paginate.js (mode: 'all')
 import nuxt_plugin_vue2googlemaps_51da65b7 from 'nuxt_plugin_vue2googlemaps_51da65b7' // Source: ../plugins/vue2-google-maps.js (mode: 'all')
@@ -184,12 +184,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_bootstrapvue_6fa0a32c === 'function') {
-    await nuxt_plugin_bootstrapvue_6fa0a32c(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_b3ffdfa0 === 'function') {
+    await nuxt_plugin_bootstrapvue_b3ffdfa0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_vuesocialsharingplugin_47846c76 === 'function') {
-    await nuxt_plugin_vuesocialsharingplugin_47846c76(app.context, inject)
+  if (typeof nuxt_plugin_vuesocialsharingplugin_6b34737a === 'function') {
+    await nuxt_plugin_vuesocialsharingplugin_6b34737a(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vueawesomeswiper_5ce03f58 === 'function') {

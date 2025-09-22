@@ -2,50 +2,50 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "/home/timo/repos/karakale-website/pages/about.vue",
+    "component": "/home/tibeil/repos/karakale-website/pages/about.vue",
     "chunkName": "pages/about",
-    "_name": "_2f41e2bc"
+    "_name": "_7e895238"
   },
   {
     "name": "datenschutz",
     "path": "/datenschutz",
-    "component": "/home/timo/repos/karakale-website/pages/datenschutz.vue",
+    "component": "/home/tibeil/repos/karakale-website/pages/datenschutz.vue",
     "chunkName": "pages/datenschutz",
-    "_name": "_c9c69fdc"
+    "_name": "_e74cdae4"
   },
   {
     "name": "galerie",
     "path": "/galerie",
-    "component": "/home/timo/repos/karakale-website/pages/galerie.vue",
+    "component": "/home/tibeil/repos/karakale-website/pages/galerie.vue",
     "chunkName": "pages/galerie",
-    "_name": "_a34e926c"
+    "_name": "_49823746"
   },
   {
     "name": "impressum",
     "path": "/impressum",
-    "component": "/home/timo/repos/karakale-website/pages/impressum.vue",
+    "component": "/home/tibeil/repos/karakale-website/pages/impressum.vue",
     "chunkName": "pages/impressum",
-    "_name": "_54202726"
+    "_name": "_6a290ebc"
   },
   {
     "name": "kontakt",
     "path": "/kontakt",
-    "component": "/home/timo/repos/karakale-website/pages/kontakt.vue",
+    "component": "/home/tibeil/repos/karakale-website/pages/kontakt.vue",
     "chunkName": "pages/kontakt",
-    "_name": "_1d9d530f"
+    "_name": "_8e7258ea"
   },
   {
     "name": "leistungen",
     "path": "/leistungen",
-    "component": "/home/timo/repos/karakale-website/pages/leistungen.vue",
+    "component": "/home/tibeil/repos/karakale-website/pages/leistungen.vue",
     "chunkName": "pages/leistungen",
-    "_name": "_4306db27"
+    "_name": "_b4b48daa"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/timo/repos/karakale-website/pages/index.vue",
+    "component": "/home/tibeil/repos/karakale-website/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_4ef9bd81"
+    "_name": "_c37da606"
   }
 ]

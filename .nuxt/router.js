@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _2f41e2bc = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
-const _c9c69fdc = () => interopDefault(import('../pages/datenschutz.vue' /* webpackChunkName: "pages/datenschutz" */))
-const _a34e926c = () => interopDefault(import('../pages/galerie.vue' /* webpackChunkName: "pages/galerie" */))
-const _54202726 = () => interopDefault(import('../pages/impressum.vue' /* webpackChunkName: "pages/impressum" */))
-const _1d9d530f = () => interopDefault(import('../pages/kontakt.vue' /* webpackChunkName: "pages/kontakt" */))
-const _4306db27 = () => interopDefault(import('../pages/leistungen.vue' /* webpackChunkName: "pages/leistungen" */))
-const _4ef9bd81 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _7e895238 = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
+const _e74cdae4 = () => interopDefault(import('../pages/datenschutz.vue' /* webpackChunkName: "pages/datenschutz" */))
+const _49823746 = () => interopDefault(import('../pages/galerie.vue' /* webpackChunkName: "pages/galerie" */))
+const _6a290ebc = () => interopDefault(import('../pages/impressum.vue' /* webpackChunkName: "pages/impressum" */))
+const _8e7258ea = () => interopDefault(import('../pages/kontakt.vue' /* webpackChunkName: "pages/kontakt" */))
+const _b4b48daa = () => interopDefault(import('../pages/leistungen.vue' /* webpackChunkName: "pages/leistungen" */))
+const _c37da606 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -25,31 +25,31 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _2f41e2bc,
+    component: _7e895238,
     name: "about"
   }, {
     path: "/datenschutz",
-    component: _c9c69fdc,
+    component: _e74cdae4,
     name: "datenschutz"
   }, {
     path: "/galerie",
-    component: _a34e926c,
+    component: _49823746,
     name: "galerie"
   }, {
     path: "/impressum",
-    component: _54202726,
+    component: _6a290ebc,
     name: "impressum"
   }, {
     path: "/kontakt",
-    component: _1d9d530f,
+    component: _8e7258ea,
     name: "kontakt"
   }, {
     path: "/leistungen",
-    component: _4306db27,
+    component: _b4b48daa,
     name: "leistungen"
   }, {
     path: "/",
-    component: _4ef9bd81,
+    component: _c37da606,
     name: "index"
   }],
 
