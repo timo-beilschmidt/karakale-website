@@ -6,6 +6,26 @@ export default {
         fallback: true
     },
 
+    // Sitemap configuration
+    sitemap: {
+        hostname: 'https://kfzgutachten-karakale.de',
+        gzip: true,
+        routes: [
+            '/',
+            '/about',
+            '/kontakt',
+            '/leistungen',
+            '/galerie',
+            '/datenschutz',
+            '/impressum'
+        ],
+        defaults: {
+            changefreq: 'monthly',
+            priority: 1,
+            lastmod: new Date()
+        }
+    },
+
     /*
     ** Headers of the page
     */
@@ -22,11 +42,25 @@ export default {
                 hid: 'description', 
                 name: 'description', 
                 content: 'Kfz Gutachten und Prüfbüro Karakale bietet Hauptuntersuchungen (TÜV) und Gutachten jeder Art an. (z.B. Oldtimer-, Unfall-, e-Auto Gutachten)'
-            }
+            },
+            // Open Graph tags
+            { hid: 'og:type', property: 'og:type', content: 'website' },
+            { hid: 'og:site_name', property: 'og:site_name', content: 'Kfz Gutachten Karakale' },
+            { hid: 'og:locale', property: 'og:locale', content: 'de_DE' },
+            { hid: 'og:title', property: 'og:title', content: 'Kfz Gutachten und Prüfbüro Karakale' },
+            { hid: 'og:description', property: 'og:description', content: 'Kfz Gutachten und Prüfbüro Karakale bietet Hauptuntersuchungen (TÜV) und Gutachten jeder Art an. (z.B. Oldtimer-, Unfall-, e-Auto Gutachten)' },
+            { hid: 'og:url', property: 'og:url', content: 'https://kfzgutachten-karakale.de' },
+            // Twitter Card tags
+            { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+            { hid: 'twitter:title', name: 'twitter:title', content: 'Kfz Gutachten und Prüfbüro Karakale' },
+            { hid: 'twitter:description', name: 'twitter:description', content: 'Kfz Gutachten und Prüfbüro Karakale bietet Hauptuntersuchungen (TÜV) und Gutachten jeder Art an.' },
+            // Keywords
+            { hid: 'keywords', name: 'keywords', content: 'Kfz Gutachten, TÜV, Hauptuntersuchung, HU, Oldtimer Gutachten, Unfallgutachten, e-Auto Gutachten, Bonn, Prüfbüro' }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon_logo.png' },
-            { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon_logo.png' }
+            { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon_logo.png' },
+            { rel: 'canonical', href: 'https://kfzgutachten-karakale.de' }
         ],
         script: [
             // Google Consent Mode
@@ -79,6 +113,7 @@ export default {
         '@nuxtjs/style-resources',
         '@nuxtjs/redirect-module',
         'vue-social-sharing/nuxt',
+        '@nuxtjs/sitemap',
     ],
 
     styleResources: {

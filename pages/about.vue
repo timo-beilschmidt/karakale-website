@@ -71,8 +71,51 @@
         },
 
         head() {
+            const baseUrl = 'https://kfzgutachten-karakale.de';
+            const pageUrl = baseUrl + '/about';
+            
             return {
-                title: 'Über Uns'
+                title: 'Über Uns - Kfz Gutachten Karakale',
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: 'Erfahren Sie mehr über das Kfz Prüfbüro Karakale in Bonn. Unser Team, unsere Kompetenz und langjährige Erfahrung in Kfz Gutachten und Hauptuntersuchungen. Partner der TÜV NORD.'
+                    },
+                    {
+                        hid: 'keywords',
+                        name: 'keywords',
+                        content: 'Über uns, Kfz Prüfbüro Bonn, Kfz Gutachten Team, TÜV Partner Bonn, Prüfbüro Geschichte'
+                    },
+                    {
+                        hid: 'og:title',
+                        property: 'og:title',
+                        content: 'Über Uns - Kfz Gutachten Karakale'
+                    },
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content: 'Erfahren Sie mehr über das Kfz Prüfbüro Karakale in Bonn. Unser Team und unsere Kompetenz.'
+                    },
+                    {
+                        hid: 'og:url',
+                        property: 'og:url',
+                        content: pageUrl
+                    },
+                    {
+                        hid: 'twitter:title',
+                        name: 'twitter:title',
+                        content: 'Über Uns - Kfz Gutachten Karakale'
+                    },
+                    {
+                        hid: 'twitter:description',
+                        name: 'twitter:description',
+                        content: 'Erfahren Sie mehr über das Kfz Prüfbüro Karakale in Bonn.'
+                    },
+                ],
+                link: [
+                    { rel: 'canonical', href: pageUrl }
+                ]
             }
         },
     };

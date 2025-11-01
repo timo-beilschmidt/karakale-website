@@ -59,8 +59,41 @@
         },
 
         head() {
+            const baseUrl = 'https://kfzgutachten-karakale.de';
+            const pageUrl = baseUrl + '/galerie';
+            
             return {
-                title: 'Galerie'
+                title: 'Galerie - Kfz Gutachten Karakale',
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: 'Galerie unserer Arbeit - Sehen Sie Beispiele unserer Kfz Gutachten und Prüfungen. Bilder von Hauptuntersuchungen, Unfallgutachten und mehr.'
+                    },
+                    {
+                        hid: 'keywords',
+                        name: 'keywords',
+                        content: 'Galerie, Kfz Gutachten Bilder, TÜV Prüfung Bilder, Unfallgutachten Beispiele'
+                    },
+                    {
+                        hid: 'og:title',
+                        property: 'og:title',
+                        content: 'Galerie - Kfz Gutachten Karakale'
+                    },
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content: 'Galerie unserer Arbeit - Sehen Sie Beispiele unserer Kfz Gutachten und Prüfungen.'
+                    },
+                    {
+                        hid: 'og:url',
+                        property: 'og:url',
+                        content: pageUrl
+                    },
+                ],
+                link: [
+                    { rel: 'canonical', href: pageUrl }
+                ]
             }
         },
     };

@@ -64,8 +64,41 @@
         },
 
         head() {
+            const baseUrl = 'https://kfzgutachten-karakale.de';
+            const pageUrl = baseUrl + '/impressum';
+            
             return {
-                title: 'Impressum'
+                title: 'Impressum - Kfz Gutachten Karakale',
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: 'Impressum des Kfz Prüfbüros Karakale. Rechtliche Angaben und Kontaktdaten.'
+                    },
+                    {
+                        hid: 'robots',
+                        name: 'robots',
+                        content: 'noindex, follow'
+                    },
+                    {
+                        hid: 'og:title',
+                        property: 'og:title',
+                        content: 'Impressum - Kfz Gutachten Karakale'
+                    },
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content: 'Impressum des Kfz Prüfbüros Karakale.'
+                    },
+                    {
+                        hid: 'og:url',
+                        property: 'og:url',
+                        content: pageUrl
+                    },
+                ],
+                link: [
+                    { rel: 'canonical', href: pageUrl }
+                ]
             }
         },
     };

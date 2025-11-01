@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Disallow: /admin/
+Disallow: /_nuxt/
+
+Sitemap: https://kfzgutachten-karakale.de/sitemap.xml
+
