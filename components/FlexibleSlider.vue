@@ -8,7 +8,7 @@
                             <div class="swiper-slide">
                                 <div class="flexale-image">
                                     <div class="thumb">
-                                        <img src="/img/other/ZOE_cut.webp" alt="Renault ZOE als Firmenwagen mit Logo auf der linken Seite.">
+                                        <img src="/img/other/ZOE_cut.webp" alt="Renault ZOE als Firmenwagen mit Logo auf der linken Seite." width="800" height="600" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -16,7 +16,7 @@
                             <div class="swiper-slide">
                                 <div class="flexale-image">
                                     <div class="thumb">
-                                        <img src="/img/logo/logo_karakale.svg" alt="Das Logo von Kfz Gutachten Karakale in Farbe.">
+                                        <img src="/img/logo/logo_karakale.svg" alt="Das Logo von Kfz Gutachten Karakale in Farbe." width="400" height="200" loading="lazy">
                                     </div>
                                 </div>
                             </div>

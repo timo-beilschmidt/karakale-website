@@ -8,7 +8,7 @@
                             <!-- Start Single Carousel -->
                             <div class="carousle-slider swiper-slide">
                                 <div class="thumb">
-                                    <img src="/img/carousel/carousel-md-1.jpg" alt="Carousel Image">
+                                    <img src="/img/carousel/carousel-md-1.jpg" alt="Carousel Image" width="400" height="300" loading="lazy">
                                 </div>
                                 <div class="content">
                                     <div class="spacing"></div>
@@ -21,7 +21,7 @@
                             <!-- Start Single Carousel -->
                             <div class="carousle-slider swiper-slide">
                                 <div class="thumb">
-                                    <img src="/img/carousel/carousel-md-2.jpg" alt="Carousel Image">
+                                    <img src="/img/carousel/carousel-md-2.jpg" alt="Carousel Image" width="400" height="300" loading="lazy">
                                 </div>
                                 <div class="content">
                                     <div class="spacing"></div>
@@ -34,7 +34,7 @@
                             <!-- Start Single Carousel -->
                             <div class="carousle-slider swiper-slide">
                                 <div class="thumb">
-                                    <img src="/img/carousel/carousel-md-3.jpg" alt="Carousel Image">
+                                    <img src="/img/carousel/carousel-md-3.jpg" alt="Carousel Image" width="400" height="300" loading="lazy">
                                 </div>
                                 <div class="content">
                                     <div class="spacing"></div>
@@ -47,7 +47,7 @@
                             <!-- Start Single Carousel -->
                             <div class="carousle-slider swiper-slide">
                                 <div class="thumb">
-                                    <img src="/img/carousel/carousel-md-4.jpg" alt="Carousel Image">
+                                    <img src="/img/carousel/carousel-md-4.jpg" alt="Carousel Image" width="400" height="300" loading="lazy">
                                 </div>
                                 <div class="content">
                                     <div class="spacing"></div>

@@ -1,7 +1,7 @@
 <template>
     <div class="portfolio portfolio_style--1">
         <div class="thumb">
-            <img :src="portfolio.image" :alt="portfolio.heading">
+            <img :src="portfolio.image" :alt="portfolio.heading" width="600" height="400" loading="lazy">
         </div>
         <!-- <div class="port-overlay-info">
             <div class="hover-action">

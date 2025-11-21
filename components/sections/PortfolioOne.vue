@@ -19,7 +19,7 @@
                 <div class="col-lg-6">
                     <div class="portfolio portfolio_style--1">
                         <div class="thumb">
-                            <img src="/img/portfolio/bearbeitet/810_810.jpg" alt="Mercedes auf einer Rampe bei Erstellung des Gutachtens.">
+                            <img src="/img/portfolio/bearbeitet/810_810.jpg" alt="Mercedes auf einer Rampe bei Erstellung des Gutachtens." width="810" height="810" loading="lazy">
                         </div>
                         <div class="port-overlay-info">
                             <div class="hover-action">
@@ -48,7 +48,7 @@
                             <!-- Start Single Portfolio -->
                             <div class="portfolio portfolio_style--1">
                                 <div class="thumb">
-                                    <img src="/img/portfolio/bearbeitet/810_405.jpg" alt="Ein Peugeot mit starken Schäden auf der linken Seite.">
+                                    <img src="/img/portfolio/bearbeitet/810_405.jpg" alt="Ein Peugeot mit starken Schäden auf der linken Seite." width="810" height="405" loading="lazy">
                                 </div>
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
@@ -67,7 +67,7 @@
                             <!-- Start Single Portfolio -->
                             <div class="portfolio portfolio_style--1">
                                 <div class="thumb">
-                                    <img src="/img/portfolio/bearbeitet/480_1.jpg" alt="Ein Smart mit schwerem Schaden auf der rechten Seite.">
+                                    <img src="/img/portfolio/bearbeitet/480_1.jpg" alt="Ein Smart mit schwerem Schaden auf der rechten Seite." width="480" height="480" loading="lazy">
                                 </div>
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
@@ -86,7 +86,7 @@
                             <!-- Start Single Portfolio -->
                             <div class="portfolio portfolio_style--1">
                                 <div class="thumb">
-                                    <img src="/img/portfolio/bearbeitet/480_2.jpg" alt="Van mit seitlichem Schaden.">
+                                    <img src="/img/portfolio/bearbeitet/480_2.jpg" alt="Van mit seitlichem Schaden." width="480" height="480" loading="lazy">
                                 </div>
                                 <div class="port-overlay-info">
                                     <div class="hover-action">

@@ -2,7 +2,7 @@
     <div class="portfolio with-caption">
         <div class="thumb video-with-thumb">
             <n-link :to="`/portfolio/${portfolio.slug}`">
-                <img :src="portfolio.image" :alt="portfolio.heading">
+                <img :src="portfolio.image" :alt="portfolio.heading" width="600" height="400" loading="lazy">
             </n-link>
         </div>
         <div class="caption-bottom text-left">

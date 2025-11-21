@@ -60,21 +60,24 @@ export default {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon_logo.png' },
             { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon_logo.png' },
-            { rel: 'canonical', href: 'https://kfzgutachten-karakale.de' }
+            { rel: 'canonical', href: 'https://kfzgutachten-karakale.de' },
+            { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+            { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true }
         ],
         script: [
-            // Google Consent Mode
+            // Google Consent Mode - defer to avoid render blocking
             {
                 src: "/js/consent.js",
                 "data-cookieconsent": "ignore",
+                defer: true,
             },
-            // Google Analytics Code
+            // Google Analytics Code - defer to avoid render blocking
             {
                 src: "https://www.googletagmanager.com/gtag/js?id=GTM-WB4L3K8",
-                async: true,
+                defer: true,
             },
-            // Import analitics.js file
-            { src: "/js/analytics.js" },
+            // Import analitics.js file - defer to avoid render blocking
+            { src: "/js/analytics.js", defer: true },
         ]
     },
 
@@ -127,6 +130,88 @@ export default {
     */
     build: {
         extractCSS: true,
-        transpile: [/^vue2-google-maps($|\/)/]
+        transpile: [/^vue2-google-maps($|\/)/],
+        terser: {
+            terserOptions: {
+                compress: {
+                    drop_console: process.env.NODE_ENV === 'production'
+                }
+            }
+        },
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+                cacheGroups: {
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        priority: 10
+                    },
+                    common: {
+                        minChunks: 2,
+                        priority: 5,
+                        reuseExistingChunk: true
+                    }
+                }
+            }
+        },
+        postcss: {
+            plugins: process.env.NODE_ENV === 'production' ? {
+                '@fullhuman/postcss-purgecss': {
+                    content: [
+                        'components/**/*.vue',
+                        'layouts/**/*.vue',
+                        'pages/**/*.vue',
+                        'plugins/**/*.js',
+                        'nuxt.config.js'
+                    ],
+                    defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+                    safelist: {
+                        standard: [
+                            /-(leave|enter|appear)(|-(to|from|active))$/,
+                            /^(?!(|.*?:)cursor-move).+-move$/,
+                            /^router-link(|-exact)-active$/,
+                            /data-v-.*/,
+                            /swiper-.*/,
+                            /wow/,
+                            /move-up/,
+                            /bg_color--.*/,
+                            /theme-color/,
+                            /active-link/,
+                            /^fa-/,
+                            /^fab-/,
+                            /^fas-/,
+                            /^far-/,
+                            /^ion-/,
+                            /^linea-/,
+                            /^cerebri/,
+                            /^louis_george/,
+                            /^template-/,
+                            /^col-/,
+                            /^row/,
+                            /^container/,
+                            /^btn/,
+                            /^brook-/,
+                            /^heading/,
+                            /^bk_/
+                        ],
+                        deep: [
+                            /swiper/,
+                            /wow/,
+                            /bootstrap/,
+                            /vue-/,
+                            /nuxt/
+                        ],
+                        greedy: [
+                            /swiper/,
+                            /wow/,
+                            /bootstrap/,
+                            /vue-/,
+                            /nuxt/
+                        ]
+                    }
+                }
+            } : {}
+        }
     },
 }

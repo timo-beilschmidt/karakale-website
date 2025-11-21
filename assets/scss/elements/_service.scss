@@ -132,7 +132,12 @@
     &.service--2{
         .thumb{
             margin-bottom: 35px;
+            overflow: hidden;
             img{
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
                 -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
                 transition: all .3s cubic-bezier(.645,.045,.355,1);
             }
@@ -174,6 +179,10 @@
             overflow: hidden;
             a{
                 img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    display: block;
                     -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
                     transition: all .3s cubic-bezier(.645,.045,.355,1);
                 }

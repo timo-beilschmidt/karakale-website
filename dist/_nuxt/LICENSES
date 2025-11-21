@@ -1,12 +1,4 @@
 /*!
- * BootstrapVue Icons, generated from Bootstrap Icons 1.2.2
- *
- * @link https://icons.getbootstrap.com/
- * @license MIT
- * https://github.com/twbs/icons/blob/master/LICENSE.md
- */
-
-/*!
  * Masonry v4.2.2
  * Cascading grid layout library
  * https://masonry.desandro.com
@@ -18,6 +10,12 @@
  * Outlayer v2.1.1
  * the brains and guts of a layout library
  * MIT license
+ */
+
+/*!
+ * Vue.js v2.7.16
+ * (c) 2014-2023 Evan You
+ * Released under the MIT License.
  */
 
 /*!
@@ -122,27 +120,4 @@ and limitations under the License.
  *
  *            Non-commercial use permitted under same terms as CC BY-NC 3.0 license.
  *            http://creativecommons.org/licenses/by-nc/3.0/
- */
-
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-
-
-/*!
-  * vue-router v3.5.3
-  * (c) 2021 Evan You
-  * @license MIT
-  */
-
-/*!
- * Vue.js v2.6.14
- * (c) 2014-2021 Evan You
- * Released under the MIT License.
  */
