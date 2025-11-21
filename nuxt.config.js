@@ -12,12 +12,12 @@ export default {
         gzip: true,
         routes: [
             '/',
-            '/about',
-            '/kontakt',
-            '/leistungen',
-            '/galerie',
-            '/datenschutz',
-            '/impressum'
+            '/about/',
+            '/kontakt/',
+            '/leistungen/',
+            '/galerie/',
+            '/datenschutz/',
+            '/impressum/'
         ],
         defaults: {
             changefreq: 'monthly',
