@@ -5,7 +5,7 @@
             <div class="search-header">
                 <div class="logo">
                     <n-link to="/">
-                        <img src="/img/logo/logo-black.png" alt="Logo von Kfz Gutachten Karakale in dunkel.">
+                        <img src="/img/logo/logo-black.png" alt="Logo von Kfz Gutachten Karakale in dunkel." loading="lazy">
                     </n-link>
                 </div>
                 <button class="search-close" @click="$emit('toggleSearch')"></button>

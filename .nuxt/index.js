@@ -15,12 +15,6 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 import nuxt_plugin_bootstrapvue_b3ffdfa0 from 'nuxt_plugin_bootstrapvue_b3ffdfa0' // Source: ./bootstrap-vue.js (mode: 'all')
 import nuxt_plugin_vuesocialsharingplugin_6b34737a from 'nuxt_plugin_vuesocialsharingplugin_6b34737a' // Source: ./vue-social-sharing-plugin.js (mode: 'all')
 import nuxt_plugin_vueawesomeswiper_5ce03f58 from 'nuxt_plugin_vueawesomeswiper_5ce03f58' // Source: ../plugins/vue-awesome-swiper.js (mode: 'all')
-import nuxt_plugin_vuejspaginate_185e95ec from 'nuxt_plugin_vuejspaginate_185e95ec' // Source: ../plugins/vuejs-paginate.js (mode: 'all')
-import nuxt_plugin_vue2googlemaps_51da65b7 from 'nuxt_plugin_vue2googlemaps_51da65b7' // Source: ../plugins/vue2-google-maps.js (mode: 'all')
-import nuxt_plugin_vuemasonrycss_6d616ab9 from 'nuxt_plugin_vuemasonrycss_6d616ab9' // Source: ../plugins/vue-masonry-css.js (mode: 'all')
-import nuxt_plugin_Mixitupclient_93a1f82c from 'nuxt_plugin_Mixitupclient_93a1f82c' // Source: ../plugins/Mixitup.client.js (mode: 'client')
-import nuxt_plugin_silentbox_80b78152 from 'nuxt_plugin_silentbox_80b78152' // Source: ../plugins/silentbox.js (mode: 'all')
-import nuxt_plugin_vuemasonry_087bf870 from 'nuxt_plugin_vuemasonry_087bf870' // Source: ../plugins/vue-masonry (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -49,7 +43,7 @@ Vue.component(Nuxt.name, Nuxt)
 
 Object.defineProperty(Vue.prototype, '$nuxt', {
   get() {
-    const globalNuxt = this.$root.$options.$nuxt
+    const globalNuxt = this.$root ? this.$root.$options.$nuxt : null
     if (process.client && !globalNuxt && typeof window !== 'undefined') {
       return window.$nuxt
     }
@@ -63,7 +57,8 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp(ssrContext, config = {}) {
-  const router = await createRouter(ssrContext, config)
+  const store = null
+  const router = await createRouter(ssrContext, config, { store })
 
   // Create Root instance
 
@@ -95,6 +90,7 @@ async function createApp(ssrContext, config = {}) {
       },
 
       err: null,
+      errPageReady: false,
       dateErr: null,
       error (err) {
         err = err || null
@@ -106,6 +102,7 @@ async function createApp(ssrContext, config = {}) {
         }
         nuxt.dateErr = Date.now()
         nuxt.err = err
+        nuxt.errPageReady = false
         // Used in src/server.js
         if (ssrContext) {
           ssrContext.nuxt.error = err
@@ -135,6 +132,7 @@ async function createApp(ssrContext, config = {}) {
     req: ssrContext ? ssrContext.req : undefined,
     res: ssrContext ? ssrContext.res : undefined,
     beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined,
+    beforeSerializeFns: ssrContext ? ssrContext.beforeSerializeFns : undefined,
     ssrContext
   })
 
@@ -194,30 +192,6 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_vueawesomeswiper_5ce03f58 === 'function') {
     await nuxt_plugin_vueawesomeswiper_5ce03f58(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_vuejspaginate_185e95ec === 'function') {
-    await nuxt_plugin_vuejspaginate_185e95ec(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_vue2googlemaps_51da65b7 === 'function') {
-    await nuxt_plugin_vue2googlemaps_51da65b7(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_vuemasonrycss_6d616ab9 === 'function') {
-    await nuxt_plugin_vuemasonrycss_6d616ab9(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_Mixitupclient_93a1f82c === 'function') {
-    await nuxt_plugin_Mixitupclient_93a1f82c(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_silentbox_80b78152 === 'function') {
-    await nuxt_plugin_silentbox_80b78152(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_vuemasonry_087bf870 === 'function') {
-    await nuxt_plugin_vuemasonry_087bf870(app.context, inject)
   }
 
   // Lock enablePreview in context

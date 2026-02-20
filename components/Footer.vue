@@ -13,6 +13,7 @@
                 <img
                   src="/img/logo/logo-white.svg"
                   alt="Logo von Kfz Gutachten Karakale in weiß"
+                  loading="lazy"
                 />
               </n-link>
             </div>

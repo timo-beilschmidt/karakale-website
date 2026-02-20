@@ -5,7 +5,7 @@
             <div class="mobileheader">
                 <div class="logo">
                     <n-link to="/">
-                        <img src="/img/logo/logo-black.svg" alt="Logo von Kfz Gutachten Karakale in dunkel.">
+                        <img src="/img/logo/logo-black.svg" alt="Logo von Kfz Gutachten Karakale in dunkel." loading="lazy">
                     </n-link>
                 </div>
                 <button class="mobile-close" @click="$emit('togglenav')"></button>

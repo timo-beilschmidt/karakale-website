@@ -25,7 +25,7 @@
                         <div class="brand__list brand-default brand-style--2 no-border">
                             <div class="brand" v-for="brand in data" :key="brand.id">
                                 <a class="link" :href="brand.link">
-                                    <img :src="brand.logo" :alt="brand.alt">
+                                    <img :src="brand.logo" :alt="brand.alt" loading="lazy">
                                 </a>
                             </div>
                         </div>

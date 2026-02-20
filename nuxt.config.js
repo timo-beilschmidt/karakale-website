@@ -100,12 +100,6 @@ export default {
     */
     plugins: [
         '~/plugins/vue-awesome-swiper.js',
-        '~/plugins/vuejs-paginate.js',
-        '~/plugins/vue2-google-maps.js',
-        '~/plugins/vue-masonry-css.js',
-        '~/plugins/Mixitup.client.js',
-        '~/plugins/silentbox.js',
-        { src: '~/plugins/vue-masonry', ssr: false }
     ],
   
     /*
@@ -130,7 +124,6 @@ export default {
     */
     build: {
         extractCSS: true,
-        transpile: [/^vue2-google-maps($|\/)/],
         terser: {
             terserOptions: {
                 compress: {

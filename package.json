@@ -17,19 +17,13 @@
         "@nuxtjs/style-resources": "^1.2.1",
         "bootstrap": "^4.6.2",
         "bootstrap-vue": "^2.23.1",
-        "mixitup": "^3.3.1",
         "nuxt": "^2.17.3",
         "swiper": "^5.4.5",
         "vue": "^2.7.14",
         "vue-awesome-swiper": "^4.1.1",
         "vue-cookie-accept-decline": "^5.4.0",
         "vue-fixed-header": "^3.2.15",
-        "vue-masonry": "^0.13.0",
-        "vue-masonry-css": "^1.0.3",
-        "vue-silentbox": "^2.4.5",
-        "vue-social-sharing": "^3.0.9",
-        "vue2-google-maps": "^0.10.7",
-        "vuejs-paginate": "^2.1.0"
+        "vue-social-sharing": "^3.0.9"
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^5.0.0",

@@ -1,33 +1,7 @@
 /*!
- * Masonry v4.2.2
- * Cascading grid layout library
- * https://masonry.desandro.com
- * MIT License
- * by David DeSandro
- */
-
-/*!
- * Outlayer v2.1.1
- * the brains and guts of a layout library
- * MIT license
- */
-
-/*!
  * Vue.js v2.7.16
  * (c) 2014-2023 Evan You
  * Released under the MIT License.
- */
-
-/*!
- * getSize v2.0.3
- * measure size of elements
- * MIT license
- */
-
-/*!
- * imagesLoaded v4.1.4
- * JavaScript is all like "You images are done yet or what?"
- * MIT License
  */
 
 /*!
@@ -40,12 +14,6 @@
 /*!
  * vue-client-only v0.0.0-semantic-release
  * (c) 2021-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
-
-/*!
- * vue-masonry-css v1.0.3
- * https://github.com/paulcollett/vue-masonry-css
  * Released under the MIT License.
  */
 
@@ -104,20 +72,4 @@ and limitations under the License.
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */
-
-/**!
- * MixItUp v3.3.1
- * A high-performance, dependency-free library for animated filtering, sorting and more
- * Build 94e0fbf6-cd0b-4987-b3c0-14b59b67b8a0
- *
- * @copyright Copyright 2014-2018 KunkaLabs Limited.
- * @author    KunkaLabs Limited.
- * @link      https://www.kunkalabs.com/mixitup/
- *
- * @license   Commercial use requires a commercial license.
- *            https://www.kunkalabs.com/mixitup/licenses/
- *
- *            Non-commercial use permitted under same terms as CC BY-NC 3.0 license.
- *            http://creativecommons.org/licenses/by-nc/3.0/
  */
