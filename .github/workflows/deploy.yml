@@ -57,21 +57,49 @@ jobs:
           commit_message: Deploy static site from ${{ github.sha }}
 
   retrieve-project:
-    name: check IONOS readiness
+    name: check IONOS readiness for gh-pages
     needs: publish-gh-pages
     runs-on: ubuntu-latest
     outputs:
-      deployment-enabled: ${{ fromJson(steps.project.outputs.info).deployment-enabled }}
-      branch-id: ${{ fromJson(steps.project.outputs.info).branch-id }}
+      deployment-enabled: ${{ steps.project.outputs.deployment-enabled }}
+      branch-id: ${{ steps.project.outputs.branch-id }}
     steps:
-      - name: Fetch project data
-        uses: ionos-deploy-now/project-action@v1
+      - name: Fetch gh-pages project data
         id: project
-        with:
-          api-key: ${{ secrets.IONOS_API_KEY }}
-          service-host: api-eu.ionos.space
-          project-id: b5ba8e64-53bb-4248-8f1d-409206bedeb0
-          action: retrieve-info
+        env:
+          IONOS_API_KEY: ${{ secrets.IONOS_API_KEY }}
+          IONOS_SERVICE_HOST: api-eu.ionos.space
+          IONOS_PROJECT_ID: b5ba8e64-53bb-4248-8f1d-409206bedeb0
+          IONOS_BRANCH_NAME: gh-pages
+        run: |
+          set -euo pipefail
+
+          branches_json="$(curl -fsS --get \
+            --data-urlencode "name=${IONOS_BRANCH_NAME}" \
+            -H "Authorization: API-Key ${IONOS_API_KEY}" \
+            "https://${IONOS_SERVICE_HOST}/v4/accounts/me/projects/${IONOS_PROJECT_ID}/branches")"
+          branch_id="$(jq -r --arg name "${IONOS_BRANCH_NAME}" '.values[]? | select(.name == $name) | .id' <<< "${branches_json}" | head -n 1)"
+
+          if [ -z "${branch_id}" ]; then
+            echo "::warning::IONOS branch '${IONOS_BRANCH_NAME}' was not found."
+            echo "deployment-enabled=false" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          deployments_json="$(curl -fsS \
+            -H "Authorization: API-Key ${IONOS_API_KEY}" \
+            "https://${IONOS_SERVICE_HOST}/v4/accounts/me/projects/${IONOS_PROJECT_ID}/branches/${branch_id}/deployments")"
+          deployment_count="$(jq -r '.total // 0' <<< "${deployments_json}")"
+
+          if [ "${deployment_count}" -lt 1 ]; then
+            echo "::warning::The IONOS deployment is disabled for branch '${IONOS_BRANCH_NAME}'."
+            echo "deployment-enabled=false" >> "${GITHUB_OUTPUT}"
+            echo "branch-id=${branch_id}" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          echo "deployment-enabled=true" >> "${GITHUB_OUTPUT}"
+          echo "branch-id=${branch_id}" >> "${GITHUB_OUTPUT}"
 
   build:
     name: build IONOS artifact from gh-pages
