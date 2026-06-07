@@ -15,7 +15,7 @@ export const BUSINESS = {
     latitude: 50.7374,
     longitude: 7.0982,
     logo: '/img/logo/logo_karakale.svg',
-    image: '/img/other/Pruefer_unter_Auto_scaled.webp',
+    image: '/img/generated/pruefer-unter-auto-1440.webp',
     sameAs: [
         'https://www.facebook.com/CarKarakale/',
         'https://www.instagram.com/gutachten.karakale/',
@@ -25,6 +25,14 @@ export const BUSINESS = {
 
 const DEFAULT_IMAGE = BUSINESS.image;
 const FILE_PATH_PATTERN = /\.[a-z0-9]{2,5}$/i;
+const SEO_IMAGE_OVERRIDES = {
+    '/img/other/Pruefer_unter_Auto_scaled.webp': '/img/generated/pruefer-unter-auto-1440.webp',
+    '/img/other/leistung_2.webp': '/img/generated/leistung-2-1440.webp',
+    '/img/portfolio/bearbeitet/810_810.jpg': '/img/generated/unfallgutachten-810-810.webp',
+    '/img/other/bild_stern.webp': '/img/generated/bild-stern-1440.webp',
+    '/img/other/DSC08203.webp': '/img/generated/gallery-dsc08203-960.webp',
+    '/img/bg/country-road-4599866.jpg': '/img/generated/country-road-1440.webp',
+};
 
 export function normalizePath(path = '/') {
     let normalized = path || '/';
@@ -52,6 +60,10 @@ export function absoluteUrl(path = '/') {
     }
 
     return `${SITE_URL}${normalizePath(path)}`;
+}
+
+export function optimizedImagePath(image = DEFAULT_IMAGE) {
+    return SEO_IMAGE_OVERRIDES[image] || image;
 }
 
 export function createBreadcrumbs(items = []) {
@@ -83,9 +95,9 @@ export function createLocalBusinessSchema(services = []) {
         email: BUSINESS.email,
         priceRange: '€€',
         image: [
-            absoluteUrl('/img/other/Pruefer_unter_Auto_scaled.webp'),
-            absoluteUrl('/img/other/leistung_2.webp'),
-            absoluteUrl('/img/portfolio/bearbeitet/810_810.jpg'),
+            absoluteUrl('/img/generated/pruefer-unter-auto-1440.webp'),
+            absoluteUrl('/img/generated/leistung-2-1440.webp'),
+            absoluteUrl('/img/generated/unfallgutachten-810-810.webp'),
         ],
         logo: absoluteUrl(BUSINESS.logo),
         address: {
@@ -152,6 +164,7 @@ export function createSchemaGraph({
     faq = [],
 }) {
     const url = absoluteUrl(path);
+    const optimizedImage = optimizedImagePath(image);
     const graph = [
         createLocalBusinessSchema(services),
         {
@@ -179,7 +192,7 @@ export function createSchemaGraph({
             },
             primaryImageOfPage: {
                 '@type': 'ImageObject',
-                url: absoluteUrl(image),
+                url: absoluteUrl(optimizedImage),
             },
         },
         createBreadcrumbs(breadcrumbs || [
@@ -221,7 +234,8 @@ export function createPageHead({
     faq = [],
 }) {
     const url = absoluteUrl(path);
-    const imageUrl = absoluteUrl(image);
+    const optimizedImage = optimizedImagePath(image);
+    const imageUrl = absoluteUrl(optimizedImage);
     const meta = [
         { hid: 'description', name: 'description', content: description },
         { hid: 'og:title', property: 'og:title', content: title },
@@ -256,7 +270,7 @@ export function createPageHead({
                     path,
                     title,
                     description,
-                    image,
+                    image: optimizedImage,
                     breadcrumbs,
                     services,
                     faq,

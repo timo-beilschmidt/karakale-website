@@ -16,7 +16,7 @@
                                     <p class="bk_pra" v-html="testimonial.text"></p>
                                     <div class="testimonial-info">
                                         <div class="post-thumbnail">
-                                            <img :src="testimonial.thumb" :alt="testimonial.alt">
+                                            <img :src="testimonial.thumb" :alt="testimonial.alt" width="70" height="70" loading="lazy" decoding="async">
                                         </div>
                                         <div class="clint-info">
                                             <h6>{{ testimonial.name }}</h6>
@@ -24,7 +24,7 @@
                                         </div>
                                     </div>
                                     <div class="testimonial-quote">
-                                        <span class="fa fa-quote-right"></span>
+                                        <SiteIcon name="quote" />
                                     </div>
                                 </div>
                             </div>
@@ -33,10 +33,10 @@
                     
                     <!-- Add Arrows -->
                     <button class="swiper-btn swiper-btn-prev">
-                        <i class="ion ion-ios-arrow-back"></i>
+                        <SiteIcon name="arrow-left" />
                     </button>
                     <button class="swiper-btn swiper-btn-next">
-                        <i class="ion ion-ios-arrow-forward"></i>
+                        <SiteIcon name="arrow-right" />
                     </button>
                 </div>
             </div>
@@ -45,9 +45,16 @@
 </template>
 
 <script>
+    import { Swiper } from 'vue-awesome-swiper';
+    import 'swiper/css/swiper.css';
+    import SiteIcon from '@/components/SiteIcon';
     import data from '../../data/testimonial.json';
 
     export default {
+        components: {
+            Swiper,
+            SiteIcon,
+        },
         data () {
             return {
                 data,

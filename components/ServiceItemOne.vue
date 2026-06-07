@@ -1,11 +1,11 @@
 <template>
     <div class="service service--1 text-center mt--30">
         <div class="icons">
-            <i
+            <SiteIcon
                 v-if="service.icon" 
                 key="ionic"
-                :class="service.icon"
-            ></i>
+                :name="service.icon"
+            />
             <img 
                 v-else
                 key="static"
@@ -25,14 +25,19 @@
                 :data-service-name="service.heading"
             >
                 <span>Weitere Details</span> 
-                <i class="fa fa-arrow-right"></i>
+                <SiteIcon name="arrow-right" />
             </n-link>
         </div>
     </div>
 </template>
 
 <script>
+    import SiteIcon from '@/components/SiteIcon';
+
     export default {
+        components: {
+            SiteIcon,
+        },
         props: ['service'],
         methods: {
             getLink(service) {

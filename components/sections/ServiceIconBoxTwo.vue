@@ -8,11 +8,11 @@
                             <div class="icon-box text-left no-border">
                                 <div class="inner">
                                     <div class="icon">
-                                        <i
+                                        <SiteIcon
                                             v-if="service.icon" 
                                             key="ionic"
-                                            :class="service.icon"
-                                        ></i>
+                                            :name="service.icon"
+                                        />
                                         <img 
                                             v-else
                                             key="static"
@@ -33,7 +33,17 @@
                 </div>
                 <div class="col-lg-5 mt_md--40 mt_sm--40">
                     <div class="thumb">
-                        <img class="w-100" src="/img/other/leistung_2.webp" alt="Kfz Sachverständiger bei der Fahrzeugprüfung in Bonn" width="600" height="800" loading="lazy">
+                        <img
+                            class="w-100"
+                            src="/img/generated/leistung-2-960.webp"
+                            srcset="/img/generated/leistung-2-480.webp 480w, /img/generated/leistung-2-960.webp 960w, /img/generated/leistung-2-1440.webp 1440w"
+                            sizes="(min-width: 992px) 42vw, 100vw"
+                            alt="Kfz Sachverständiger bei der Fahrzeugprüfung in Bonn"
+                            width="600"
+                            height="800"
+                            loading="lazy"
+                            decoding="async"
+                        >
                     </div>
                 </div>
             </div>
@@ -42,9 +52,13 @@
 </template>
 
 <script>
+    import SiteIcon from '@/components/SiteIcon';
     import data from '../../data/service.json';
 
     export default {
+        components: {
+            SiteIcon,
+        },
         data () {
             return {
                 data

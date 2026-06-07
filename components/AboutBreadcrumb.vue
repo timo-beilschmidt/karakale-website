@@ -1,5 +1,5 @@
 <template>
-    <div class="breadcrumb-area bg_image--11 ptb--270 breadcrumb-title-bar breadcrumb-title-white" :style="{ backgroundImage: `url('/img/other/DSC08203.webp')` }">
+    <div class="breadcrumb-area bg_image--11 ptb--270 breadcrumb-title-bar breadcrumb-title-white" :style="{ backgroundImage: `url('/img/generated/dsc08203-1440.webp')` }">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

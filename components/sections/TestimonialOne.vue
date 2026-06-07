@@ -26,10 +26,13 @@
 </template>
 
 <script>
+    import { Swiper } from 'vue-awesome-swiper';
+    import 'swiper/css/swiper.css';
     import data from '../../data/testimonial.json';
 
     export default {
         components: {
+            Swiper,
             TestimonialItem: () => import('../TestimonialItem')
         },
 

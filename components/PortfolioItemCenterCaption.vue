@@ -1,7 +1,16 @@
 <template>
     <div class="portfolio portfolio_style--1">
         <div class="thumb">
-            <img :src="portfolio.image" :alt="portfolio.heading" width="600" height="400" loading="lazy">
+            <img
+                :src="image.src"
+                :srcset="image.srcset"
+                sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw"
+                :alt="portfolio.heading"
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+            >
         </div>
         <!-- <div class="port-overlay-info">
             <div class="hover-action">
@@ -14,7 +23,14 @@
 </template>
 
 <script>
+    import { getResponsiveImage } from '@/utils/responsiveImages';
+
     export default {
         props: ['portfolio'],
+        computed: {
+            image() {
+                return getResponsiveImage(this.portfolio.image);
+            },
+        },
     };
 </script>

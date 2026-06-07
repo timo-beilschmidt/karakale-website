@@ -6,7 +6,7 @@
                 <div class="px-1 col-lg-4 col-md-4 col-sm-6 col-12" v-for="counter in data.counters.slice(0, 3)" :key="counter.id">
                     <div class="brook-counter text-center">
                         <div class="icon">
-                            <i :class=counter.icon></i>
+                            <SiteIcon :name="counter.icon" />
                         </div>
                         <div class="content">
                             <span class="count">{{ counter.count }}</span>
@@ -21,9 +21,13 @@
 </template>
 
 <script>
+    import SiteIcon from '@/components/SiteIcon';
     import data from '../../data/counterup.json';
 
     export default {
+        components: {
+            SiteIcon,
+        },
         data () {
             return {
                 data

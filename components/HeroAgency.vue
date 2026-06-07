@@ -36,7 +36,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-facebook"></i>
+            <SiteIcon name="facebook" />
           </a>
         </li>
         <li class="instagram">
@@ -47,7 +47,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-instagram"></i>
+            <SiteIcon name="instagram" />
           </a>
         </li>
         <li class="mail">
@@ -56,7 +56,7 @@
             class="link brook-btn"
             aria-label="E-Mail"
           >
-            <i class="fa fa-envelope"></i>
+            <SiteIcon name="email" />
           </a>
         </li>
         <li class="whatsapp">
@@ -67,7 +67,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-whatsapp"></i>
+            <SiteIcon name="whatsapp" />
           </a>
         </li>
         <!-- <li class="calendar">
@@ -86,7 +86,7 @@
             aria-label="Telefon"
           >
             <div class="coccoc-alo-ph-circle"></div>
-            <i class="fa fa-phone"></i>
+            <SiteIcon name="phone" />
           </a>
         </li>
       </ul>
@@ -95,7 +95,12 @@
 </template>
 
 <script>
+import SiteIcon from "@/components/SiteIcon";
+
 export default {
+  components: {
+    SiteIcon,
+  },
   data() {
     return {
       videos: [],
@@ -114,11 +119,14 @@ export default {
   align-items: center;
   text-align: center;
   background-color: #111c81;
-  background-image: url("/img/other/Pruefer_unter_Auto_scaled.webp");
+  background-image: url("/img/generated/pruefer-unter-auto-1440.webp");
+  @media #{$md-layout} {
+    background-image: url("/img/generated/pruefer-unter-auto-960.webp");
+  }
   // res
   @media #{$sm-layout} {
     height: 600px;
-    background-image: url("/img/other/Pruefer_unter_Auto_scaled.webp");
+    background-image: url("/img/generated/pruefer-unter-auto-480.webp");
   }
   .hero-title {
     //visibility: hidden;

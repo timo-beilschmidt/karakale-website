@@ -42,7 +42,6 @@
         components: {
             HeaderBlack: () => import('@/components/HeaderBlack'),
             OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
-            SearchPopup: () => import('@/components/SearchPopup'),
             PortfolioItemCenterCaption: () => import('@/components/PortfolioItemCenterCaption'),
             Footer: () => import('@/components/Footer'),
         },

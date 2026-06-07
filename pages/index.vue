@@ -44,16 +44,12 @@
         components: {
             HeaderBlack: () => import('@/components/HeaderBlack'),
             OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
-            SearchPopup: () => import('@/components/SearchPopup'),
             HeroAgency: () => import('@/components/HeroAgency'),
             ServiceOne: () => import('@/components/sections/ServiceOne'),
             PortfolioOne: () => import('@/components/sections/PortfolioOne'),
-            CounterUpOne: () => import('@/components/sections/CounterUpOne'),
             CounterUpTwo: () => import('@/components/sections/CounterUpTwo'),
-            TeamOne: () => import('@/components/sections/TeamOne'),
             TestimonialOne: () => import('@/components/sections/TestimonialOne'),
             BrandLogoStyleOne: () => import('@/components/BrandLogoStyleOne'),
-            BlogOne: () => import('@/components/sections/BlogOne'),
             CurveShape: () => import('@/components/CurveShape'),
             ContactUsOne: () => import('@/components/ContactUsOne'),
             Footer: () => import('@/components/Footer'),
@@ -71,7 +67,7 @@
         },
 
         head() {
-            return createPageHead({
+            const head = createPageHead({
                 title: 'Hauptuntersuchung (TÜV, HU) und Kfz Gutachten in Bonn',
                 description: 'Hauptuntersuchung (TÜV/HU), Unfallgutachten, Wertgutachten und Oldtimer-Gutachten beim Kfz Prüfbüro Karakale in Bonn. Partner der TÜV NORD.',
                 path: '/',
@@ -87,6 +83,17 @@
                     { name: 'Oldtimer-Gutachten', description: 'Gutachten für Klassiker und H-Kennzeichen.' },
                 ],
             });
+
+            head.link.push({
+                rel: 'preload',
+                as: 'image',
+                href: '/img/generated/pruefer-unter-auto-1440.webp',
+                imagesrcset: '/img/generated/pruefer-unter-auto-480.webp 480w, /img/generated/pruefer-unter-auto-960.webp 960w, /img/generated/pruefer-unter-auto-1440.webp 1440w',
+                imagesizes: '100vw',
+                fetchpriority: 'high',
+            });
+
+            return head;
         },
     };
 </script>

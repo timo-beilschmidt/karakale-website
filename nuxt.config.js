@@ -106,6 +106,7 @@ export default {
     ** Global CSS
     */
     css: [
+        'bootstrap/dist/css/bootstrap.css',
         'assets/scss/style.scss',
     ],
 
@@ -121,7 +122,6 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        '~/plugins/vue-awesome-swiper.js',
         '~/plugins/analytics.client.js',
     ],
   
@@ -129,10 +129,8 @@ export default {
     ** Nuxt.js modules
     */
     modules: [
-        'bootstrap-vue/nuxt',
         '@nuxtjs/style-resources',
         '@nuxtjs/redirect-module',
-        'vue-social-sharing/nuxt',
         '@nuxtjs/sitemap',
     ],
 
@@ -191,38 +189,17 @@ export default {
                             /swiper-.*/,
                             /wow/,
                             /move-up/,
-                            /bg_color--.*/,
-                            /theme-color/,
                             /active-link/,
-                            /^fa-/,
-                            /^fab-/,
-                            /^fas-/,
-                            /^far-/,
-                            /^ion-/,
-                            /^linea-/,
-                            /^cerebri/,
-                            /^louis_george/,
-                            /^template-/,
-                            /^col-/,
-                            /^row/,
-                            /^container/,
-                            /^btn/,
-                            /^brook-/,
-                            /^heading/,
-                            /^bk_/
+                            /show-mobile-menu/,
+                            /search-popup-open/,
+                            /vue-fixed-header--isFixed/
                         ],
                         deep: [
                             /swiper/,
-                            /wow/,
-                            /bootstrap/,
-                            /vue-/,
                             /nuxt/
                         ],
                         greedy: [
                             /swiper/,
-                            /wow/,
-                            /bootstrap/,
-                            /vue-/,
                             /nuxt/
                         ]
                     }

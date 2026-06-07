@@ -36,10 +36,15 @@
                     <div class="col-lg-6 mt_md--40 mt_sm--40">
                         <img
                             class="local-hero-image"
-                            :src="page.image"
+                            :src="heroImage.src"
+                            :srcset="heroImage.srcset"
+                            sizes="(min-width: 992px) 50vw, 100vw"
                             :alt="page.imageAlt"
                             width="760"
                             height="560"
+                            loading="eager"
+                            decoding="async"
+                            fetchpriority="high"
                         >
                     </div>
                 </div>
@@ -78,6 +83,7 @@
 <script>
 import CallToAction from '@/components/CallToAction';
 import SeoFaq from '@/components/SeoFaq';
+import { getResponsiveImage } from '@/utils/responsiveImages';
 
 export default {
     components: {
@@ -88,6 +94,11 @@ export default {
         page: {
             type: Object,
             required: true,
+        },
+    },
+    computed: {
+        heroImage() {
+            return getResponsiveImage(this.page.image);
         },
     },
 };

@@ -59,7 +59,7 @@
                 rel="noopener noreferrer"
                 aria-label="Facebook"
               >
-                <i class="fab fa-facebook"></i>
+                <SiteIcon name="facebook" />
               </a>
               <a
                 href="https://www.instagram.com/gutachten.karakale/"
@@ -67,7 +67,7 @@
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <i class="fab fa-instagram"></i>
+                <SiteIcon name="instagram" />
               </a>
               <a
                 href="https://wa.me/4915737154376"
@@ -75,7 +75,7 @@
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
               >
-                <i class="fab fa-whatsapp"></i>
+                <SiteIcon name="whatsapp" />
               </a>
             </div>
             <br />
@@ -112,29 +112,15 @@
     </div>
     <!-- End Copyright Area -->
 
-    <VueCookieAcceptDecline
-      :debug="false"
-      :disableDecline="false"
-      :showPostponeButton="false"
-      @clicked-accept="cookieClickedAccept"
-      @clicked-decline="cookieClickedDecline"
-      @clicked-postpone="cookieClickedPostpone"
-      @removed-cookie="cookieRemovedCookie"
-      @status="cookieStatus"
-      elementId="myCookiePanel"
-      position="bottom-left"
-      ref="myCookiePanel"
-      transitionName="slideFromBottom"
-      type="floating"
-      class="cookie-banner"
-    >
-      <!-- Optional -->
-      <template #postponeContent>&times;</template>
-
-      <!-- Optional -->
-      <template #message>
-        <b-card-header header-tag="header">Datenschutz-Einstellungen</b-card-header>
-        <b-card-body>
+    <transition name="slideFromBottom">
+      <div
+        v-if="isCookieOpen"
+        id="myCookiePanel"
+        ref="myCookiePanel"
+        class="cookie-banner"
+      >
+        <header class="cookie-banner__header">Datenschutz-Einstellungen</header>
+        <div class="cookie-banner__body">
           <span>
             Wir verwenden Cookies und ähnliche Technologien, um Zugriffe auf
             unsere Website zu analysieren.
@@ -151,11 +137,11 @@
             nicht einzuwilligen und deine Einwilligung zu einem späteren
             Zeitpunkt zu ändern oder zu widerrufen. Weitere Informationen zur
             Verwendung deiner Daten findest du in unserer
-            <b-link
+            <a
               href="https://kfzgutachten-karakale.de/datenschutz/"
               target="_blank"
-              >Datenschutzerklärung</b-link
-            >. Einige Services verarbeiten personenbezogene Daten in den USA.
+              rel="noopener noreferrer"
+            >Datenschutzerklärung</a>. Einige Services verarbeiten personenbezogene Daten in den USA.
             Indem du der Nutzung dieser Services zustimmst, erklärst du dich
             auch mit der Verarbeitung deiner Daten in den USA gemäß Art. 49 (1)
             lit. a DSGVO einverstanden. Die USA werden vom EuGH als ein Land mit
@@ -166,7 +152,8 @@
             Jahre alt? Dann kannst du nicht in optionale Services einwilligen.
             Du kannst deine Eltern oder Erziehungsberechtigten bitten, mit dir
             in diese Services einzuwilligen. Wenn du alle Services akzeptierst,
-            erlaubst du, dass Google Analytics und Google Ads Conversion
+            erlaubst du, dass optionale Google-Tags wie Google Analytics und,
+            sofern im Google Tag Manager aktiviert, Google Ads Conversion
             Tracking geladen werden.
           </span>
           <span v-if="!showMore"> ... </span>
@@ -181,33 +168,69 @@
           <p v-if="showMore" class="show-more-btn" @click="toggleShowMore">
             Weniger anzeigen
           </p>
-        </b-card-body>
-      </template>
-
-      <!-- Optional -->
-      <template #declineContent
-        ><b-button class="btn-pimary">Ablehnen</b-button></template
-      >
-
-      <!-- Optional -->
-      <template #acceptContent><b-button>Akzeptieren</b-button></template>
-    </VueCookieAcceptDecline>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" class="cookie-banner__button cookie-banner__button--decline" @click="cookieClickedDecline">
+            Ablehnen
+          </button>
+          <button type="button" class="cookie-banner__button cookie-banner__button--accept" @click="cookieClickedAccept">
+            Akzeptieren
+          </button>
+        </div>
+      </div>
+    </transition>
   </footer>
 </template>
 
 <script>
-import VueCookieAcceptDecline from "vue-cookie-accept-decline";
+import SiteIcon from "@/components/SiteIcon";
+
+const COOKIE_STORAGE_KEY = "vue-cookie-accept-decline-myCookiePanel";
+
 export default {
   components: {
-    VueCookieAcceptDecline,
+    SiteIcon,
   },
   data() {
     return {
+      isCookieOpen: false,
       status: null,
       showMore: false,
     };
   },
+  mounted() {
+    this.initCookiePanel();
+  },
   methods: {
+    initCookiePanel() {
+      const status = this.getStoredCookieStatus();
+      this.status = status;
+      this.isCookieOpen = !status;
+      this.cookieStatus(status);
+    },
+    getStoredCookieStatus() {
+      if (typeof window === "undefined") {
+        return null;
+      }
+
+      try {
+        return window.localStorage.getItem(COOKIE_STORAGE_KEY);
+      } catch (error) {
+        const match = document.cookie.match(new RegExp(`(?:^|; )${COOKIE_STORAGE_KEY}=([^;]*)`));
+        return match ? decodeURIComponent(match[1]) : null;
+      }
+    },
+    setStoredCookieStatus(status) {
+      if (typeof window === "undefined") {
+        return;
+      }
+
+      try {
+        window.localStorage.setItem(COOKIE_STORAGE_KEY, status);
+      } catch (error) {
+        document.cookie = `${COOKIE_STORAGE_KEY}=${encodeURIComponent(status)}; path=/; max-age=31536000; SameSite=Lax`;
+      }
+    },
     cookieStatus(status) {
       this.status = status;
       if (status === "accept") {
@@ -219,21 +242,37 @@ export default {
     },
     cookieClickedAccept() {
       this.status = "accept";
+      this.isCookieOpen = false;
+      this.setStoredCookieStatus("accept");
       this.grantAnalyticsConsent();
     },
     cookieClickedDecline() {
       this.status = "decline";
+      this.isCookieOpen = false;
+      this.setStoredCookieStatus("decline");
       this.denyAnalyticsConsent();
     },
     cookieClickedPostpone() {
       this.status = "postpone";
+      this.isCookieOpen = false;
+      this.setStoredCookieStatus("postpone");
     },
     cookieRemovedCookie() {
       this.status = null;
-      this.$refs.myCookiePanel.init();
+      this.initCookiePanel();
     },
     removeCookie() {
-      this.$refs.myCookiePanel.removeCookie();
+      if (typeof window === "undefined") {
+        return;
+      }
+
+      try {
+        window.localStorage.removeItem(COOKIE_STORAGE_KEY);
+      } catch (error) {
+        document.cookie = `${COOKIE_STORAGE_KEY}=; path=/; max-age=0; SameSite=Lax`;
+      }
+
+      this.cookieRemovedCookie();
     },
     toggleShowMore() {
       this.showMore = !this.showMore;
@@ -271,17 +310,80 @@ export default {
 
 <style lang="scss" scoped>
 .cookie-banner {
-  width: 40rem;
-  max-width: 95%;
-  max-height: 70vh;
+  background: #fff;
   border: 0.1rem solid #505050;
+  bottom: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  color: #222;
+  left: 24px;
+  max-height: 70vh;
+  max-width: 95%;
   overflow: auto;
-  margin-right: -15em;
+  position: fixed;
+  width: 40rem;
+  z-index: 9999;
+
   @media (max-width: (730px)) {
     left: 50%;
     transform: translateX(-50%);
+    width: calc(100% - 32px);
   }
 }
+
+.cookie-banner__header {
+  border-bottom: 1px solid #e5e5e5;
+  font-weight: 700;
+  padding: 16px 20px;
+}
+
+.cookie-banner__body {
+  line-height: 1.65;
+  padding: 18px 20px 8px;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 0 20px 18px;
+}
+
+.cookie-banner__button {
+  border: 1px solid #222;
+  cursor: pointer;
+  font-weight: 700;
+  min-width: 110px;
+  padding: 10px 18px;
+}
+
+.cookie-banner__button--accept {
+  background: #222;
+  color: #fff;
+}
+
+.cookie-banner__button--decline {
+  background: #fff;
+  color: #222;
+}
+
+.slideFromBottom-enter-active,
+.slideFromBottom-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.slideFromBottom-enter,
+.slideFromBottom-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@media (max-width: 730px) {
+  .slideFromBottom-enter,
+  .slideFromBottom-leave-to {
+    transform: translate(-50%, 20px);
+  }
+}
+
 p {
   &.show-more-btn {
     border: 0;

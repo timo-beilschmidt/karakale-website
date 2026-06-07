@@ -15,7 +15,7 @@
                         <div class="brand-btn">
                             <n-link to="/hauptuntersuchung-tuev-bonn/" class="moredetails-btn red-color">
                                 Weitere Leistungen
-                                <i class="fa fa-arrow-right"></i>
+                                <SiteIcon name="arrow-right" />
                             </n-link>
                         </div>
                     </div>
@@ -44,9 +44,13 @@
 </template>
 
 <script>
+    import SiteIcon from '@/components/SiteIcon';
     import data from '../data/brandLogo.json';
     
     export default {
+        components: {
+            SiteIcon,
+        },
         data () {
             return {
                 data

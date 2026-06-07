@@ -15,7 +15,7 @@
                     <label>
                         <input type="search" placeholder="Enter search keyword…">
                     </label>
-                    <button class="search-submit"><i class="fa fa-search"></i></button>
+                    <button class="search-submit"><SiteIcon name="search" /></button>
                 </form>
             </div>
         </div>
@@ -23,7 +23,11 @@
 </template>
 
 <script>
+    import SiteIcon from '@/components/SiteIcon';
+
     export default {
-        
+        components: {
+            SiteIcon,
+        },
     };
 </script>

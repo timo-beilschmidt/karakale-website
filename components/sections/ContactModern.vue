@@ -48,7 +48,7 @@
                     rel="noopener noreferrer"
                     aria-label="Facebook"
                   >
-                    <i class="fab fa-facebook"></i>
+                    <SiteIcon name="facebook" />
                   </a>
                   <a
                     href="https://www.instagram.com/gutachten.karakale/"
@@ -56,7 +56,7 @@
                     rel="noopener noreferrer"
                     aria-label="Instagram"
                   >
-                    <i class="fab fa-instagram"></i>
+                    <SiteIcon name="instagram" />
                   </a>
                   <a
                     href="https://wa.me/4915737154376"
@@ -64,7 +64,7 @@
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
                   >
-                    <i class="fab fa-whatsapp"></i>
+                    <SiteIcon name="whatsapp" />
                   </a>
                 </div>
               </div>
@@ -116,6 +116,16 @@
     </div>
   </div>
 </template>
+
+<script>
+import SiteIcon from '@/components/SiteIcon';
+
+export default {
+  components: {
+    SiteIcon,
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .business-hours {

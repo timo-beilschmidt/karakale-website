@@ -61,7 +61,8 @@
         }
         .icons{
             margin-bottom: 22px;
-            i{
+            i,
+            .site-icon {
                 color: $theme-color;
                 font-size: 80px;
             }
@@ -94,7 +95,8 @@
                     margin-top: 46px;
                     padding-right: 25px;
                     transition: 0.3s;
-                    i{
+                    i,
+                    .site-icon {
                         font-size: 12px;
                         left: auto;
                         right: auto;

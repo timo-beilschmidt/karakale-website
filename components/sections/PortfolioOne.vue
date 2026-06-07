@@ -19,7 +19,16 @@
                 <div class="col-lg-6">
                     <div class="portfolio portfolio_style--1">
                         <div class="thumb">
-                            <img src="/img/portfolio/bearbeitet/810_810.jpg" alt="Mercedes auf einer Rampe bei Erstellung des Gutachtens." width="810" height="810" loading="lazy">
+                            <img
+                                src="/img/generated/unfallgutachten-810-810.webp"
+                                srcset="/img/generated/unfallgutachten-810-480.webp 480w, /img/generated/unfallgutachten-810-810.webp 810w"
+                                sizes="(min-width: 992px) 50vw, 100vw"
+                                alt="Mercedes auf einer Rampe bei Erstellung des Gutachtens."
+                                width="810"
+                                height="810"
+                                loading="lazy"
+                                decoding="async"
+                            >
                         </div>
                         <div class="port-overlay-info">
                             <div class="hover-action">
@@ -48,7 +57,7 @@
                             <!-- Start Single Portfolio -->
                             <div class="portfolio portfolio_style--1">
                                 <div class="thumb">
-                                    <img src="/img/portfolio/bearbeitet/810_405.jpg" alt="Ein Peugeot mit starken Schäden auf der linken Seite." width="810" height="405" loading="lazy">
+                                    <img src="/img/portfolio/bearbeitet/810_405.jpg" alt="Ein Peugeot mit starken Schäden auf der linken Seite." width="810" height="405" loading="lazy" decoding="async">
                                 </div>
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
@@ -67,7 +76,7 @@
                             <!-- Start Single Portfolio -->
                             <div class="portfolio portfolio_style--1">
                                 <div class="thumb">
-                                    <img src="/img/portfolio/bearbeitet/480_1.jpg" alt="Ein Smart mit schwerem Schaden auf der rechten Seite." width="480" height="480" loading="lazy">
+                                    <img src="/img/portfolio/bearbeitet/480_1.jpg" alt="Ein Smart mit schwerem Schaden auf der rechten Seite." width="480" height="480" loading="lazy" decoding="async">
                                 </div>
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
@@ -86,7 +95,7 @@
                             <!-- Start Single Portfolio -->
                             <div class="portfolio portfolio_style--1">
                                 <div class="thumb">
-                                    <img src="/img/portfolio/bearbeitet/480_2.jpg" alt="Van mit seitlichem Schaden." width="480" height="480" loading="lazy">
+                                    <img src="/img/portfolio/bearbeitet/480_2.jpg" alt="Van mit seitlichem Schaden." width="480" height="480" loading="lazy" decoding="async">
                                 </div>
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
@@ -118,7 +127,7 @@
         font-size: 26px;
     }
     .bg-image-nature{
-        background-image: url(/img/bg/country-road-4599866.jpg);
+        background-image: url(/img/generated/country-road-1440.webp);
         position: relative;
         background-position-y: 100%;
         background-position-x: 40%;

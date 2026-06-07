@@ -123,11 +123,7 @@
 @import 'default/animations';
 @import 'default/shortcode';
 @import 'default/spacing';
-@import '../fonts/fontawesome-free/css/fontawesome-all.min.css';
-@import '../css/lauis.css';
-@import '../css/ionicons.css';
-@import '../css/linea-font.css';
-@import '../css/cerebrisans.css';
+@import '../css/site-fonts.css';
 @import '../css/animation.css';
 
 
@@ -221,6 +217,5 @@
 =================================*/
 @import 'color/color-2';
 @import './color/font-variation';
-@import 'color/preview';
 @import 'color/responsive';
 

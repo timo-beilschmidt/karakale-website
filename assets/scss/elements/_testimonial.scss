@@ -67,7 +67,8 @@ Testimonial Area
             font-size: 28px;
             text-align: right;
             line-height: 0;
-            span{
+            span,
+            .site-icon {
                 color: $theme-color;
                 font-weight: 900;
             }
