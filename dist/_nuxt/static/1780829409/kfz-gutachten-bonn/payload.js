@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/kfz-gutachten-bonn", {data:[{}],fetch:{},mutations:void 0});

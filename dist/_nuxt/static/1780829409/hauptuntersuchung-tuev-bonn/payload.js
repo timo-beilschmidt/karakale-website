@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/hauptuntersuchung-tuev-bonn", {data:[{}],fetch:{},mutations:void 0});
