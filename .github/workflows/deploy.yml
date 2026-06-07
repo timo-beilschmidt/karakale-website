@@ -63,6 +63,7 @@ jobs:
     outputs:
       deployment-enabled: ${{ steps.project.outputs.deployment-enabled }}
       branch-id: ${{ steps.project.outputs.branch-id }}
+      deployment-ids: ${{ steps.project.outputs.deployment-ids }}
     steps:
       - name: Fetch gh-pages project data
         id: project
@@ -90,16 +91,19 @@ jobs:
             -H "Authorization: API-Key ${IONOS_API_KEY}" \
             "https://${IONOS_SERVICE_HOST}/v4/accounts/me/projects/${IONOS_PROJECT_ID}/branches/${branch_id}/deployments")"
           deployment_count="$(jq -r '.total // 0' <<< "${deployments_json}")"
+          deployment_ids="$(jq -c '[.values[]?.id]' <<< "${deployments_json}")"
 
           if [ "${deployment_count}" -lt 1 ]; then
             echo "::warning::The IONOS deployment is disabled for branch '${IONOS_BRANCH_NAME}'."
             echo "deployment-enabled=false" >> "${GITHUB_OUTPUT}"
             echo "branch-id=${branch_id}" >> "${GITHUB_OUTPUT}"
+            echo "deployment-ids=[]" >> "${GITHUB_OUTPUT}"
             exit 0
           fi
 
           echo "deployment-enabled=true" >> "${GITHUB_OUTPUT}"
           echo "branch-id=${branch_id}" >> "${GITHUB_OUTPUT}"
+          echo "deployment-ids=${deployment_ids}" >> "${GITHUB_OUTPUT}"
 
   build:
     name: build IONOS artifact from gh-pages
@@ -118,12 +122,21 @@ jobs:
       - build
     if: ${{ needs.retrieve-project.outputs.deployment-enabled == 'true' }}
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
     steps:
       - name: Dispatch deployment(s)
-        uses: ionos-deploy-now/project-action@v1
-        with:
-          api-key: ${{ secrets.IONOS_API_KEY }}
-          service-host: api-eu.ionos.space
-          project-id: b5ba8e64-53bb-4248-8f1d-409206bedeb0
-          branch-id: ${{ needs.retrieve-project.outputs.branch-id }}
-          action: dispatch-deployments
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          IONOS_PROJECT_ID: b5ba8e64-53bb-4248-8f1d-409206bedeb0
+          IONOS_BRANCH_ID: ${{ needs.retrieve-project.outputs.branch-id }}
+          IONOS_DEPLOYMENT_IDS: ${{ needs.retrieve-project.outputs.deployment-ids }}
+        run: |
+          gh workflow run deploy-to-ionos.yaml \
+            --ref main \
+            --field "version=${GITHUB_SHA}" \
+            --field "project-id=${IONOS_PROJECT_ID}" \
+            --field "branch-id=${IONOS_BRANCH_ID}" \
+            --field "deployment-ids=${IONOS_DEPLOYMENT_IDS}"
