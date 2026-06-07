@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-lg-5 mt_md--40 mt_sm--40">
                     <div class="thumb">
-                        <img class="w-100" src="/img/other/leistung_2.webp" alt="service image" width="600" height="800" loading="lazy">
+                        <img class="w-100" src="/img/other/leistung_2.webp" alt="Kfz Sachverständiger bei der Fahrzeugprüfung in Bonn" width="600" height="800" loading="lazy">
                     </div>
                 </div>
             </div>

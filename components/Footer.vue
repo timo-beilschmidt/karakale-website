@@ -25,13 +25,13 @@
             <div class="footer-menu">
               <ul class="ft-menu-list bk-hover">
                 <li>
-                  <n-link to="/about">Über Uns</n-link>
+                  <n-link to="/about/">Über Uns</n-link>
                 </li>
                 <li>
-                  <n-link to="/leistungen">Leistungen</n-link>
+                  <n-link to="/leistungen/">Leistungen</n-link>
                 </li>
                 <li>
-                  <n-link to="/kontakt">Kontakt</n-link>
+                  <n-link to="/kontakt/">Kontakt</n-link>
                 </li>
               </ul>
             </div>
@@ -46,32 +46,37 @@
                 <a href="mailto:info@ing-karakale.de">info@ing-karakale.de</a>
               </p>
               <p>
-                <a href="tel::022896699180">Telefon: 0228-96699180</a>
+                <a href="tel:022896699180">Telefon: 0228-96699180</a>
               </p>
               <p>
-                <a href="tel::015737154376">Mobil: 01573-7154376</a>
+                <a href="tel:015737154376">Mobil: 01573-7154376</a>
               </p>
             </div>
             <div class="social-share social--transparent text-white">
-              <a href="#" target="_blank">
+              <a
+                href="https://www.facebook.com/CarKarakale/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <i class="fab fa-facebook"></i>
               </a>
               <a
                 href="https://www.instagram.com/gutachten.karakale/"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="https://wa.me/4915737154376" target="_blank">
+              <a
+                href="https://wa.me/4915737154376"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
                 <i class="fab fa-whatsapp"></i>
               </a>
-              <ShareNetwork
-                network="WhatsApp"
-                url="https://news.vuejs.org/issues/180"
-                title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                ><i class="fa fa-share-alt"></i
-              ></ShareNetwork>
             </div>
             <br />
             <h2 class="widgettitle hidden">
@@ -90,17 +95,17 @@
               class="bk-copyright-menu d-flex justify-content-center justify-content-md-start bk-hover"
             >
               <li>
-                <n-link to="/galerie">Galerie</n-link>
+                <n-link to="/galerie/">Galerie</n-link>
               </li>
               <li>
-                <n-link to="/kontakt">Kontakt</n-link>
+                <n-link to="/kontakt/">Kontakt</n-link>
               </li>
             </ul>
           </div>
         </div>
         <div class="col-md-6">
           <div class="copyright-right text-center text-md-right">
-            <p>&copy; 2022 <b>Kfz Gutachten Karakale</b></p>
+            <p>&copy; 2026 <b>Kfz Gutachten Karakale</b></p>
           </div>
         </div>
       </div>
@@ -128,11 +133,11 @@
 
       <!-- Optional -->
       <template #message>
-        <b-card-header header-tag="header">Cookies!</b-card-header>
+        <b-card-header header-tag="header">Datenschutz-Einstellungen</b-card-header>
         <b-card-body>
           <span>
-            Wir verwenden Cookies und ähnliche Technologien auf unserer Website
-            und verarbeiten personenbezogene Daten von dir
+            Wir verwenden Cookies und ähnliche Technologien, um Zugriffe auf
+            unsere Website zu analysieren.
           </span>
           <span v-if="showMore">
             (z.B. IP-Adresse), um z.B. Inhalte und Anzeigen zu personalisieren,
@@ -185,7 +190,7 @@
       >
 
       <!-- Optional -->
-      <template #acceptContent><b-button>Verstanden!</b-button></template>
+      <template #acceptContent><b-button>Akzeptieren</b-button></template>
     </VueCookieAcceptDecline>
   </footer>
 </template>
@@ -205,22 +210,20 @@ export default {
   methods: {
     cookieStatus(status) {
       this.status = status;
+      if (status === "accept") {
+        this.grantAnalyticsConsent();
+      }
+      if (status === "decline") {
+        this.denyAnalyticsConsent();
+      }
     },
     cookieClickedAccept() {
       this.status = "accept";
-      if (gtag) {
-        gtag("consent", "accepted", {
-          ad_storage: "granted",
-          analytics_storage: "granted",
-          functionality_storage: "granted",
-          personalization_storage: "granted",
-          security_storage: "granted",
-          wait_for_update: 500,
-        });
-      }
+      this.grantAnalyticsConsent();
     },
     cookieClickedDecline() {
       this.status = "decline";
+      this.denyAnalyticsConsent();
     },
     cookieClickedPostpone() {
       this.status = "postpone";
@@ -234,6 +237,33 @@ export default {
     },
     toggleShowMore() {
       this.showMore = !this.showMore;
+    },
+    grantAnalyticsConsent() {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("consent", "update", {
+          ad_storage: "granted",
+          analytics_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          functionality_storage: "granted",
+          personalization_storage: "granted",
+          security_storage: "granted",
+          wait_for_update: 500,
+        });
+      }
+    },
+    denyAnalyticsConsent() {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("consent", "update", {
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          functionality_storage: "denied",
+          personalization_storage: "denied",
+          security_storage: "granted",
+        });
+      }
     },
   },
 };

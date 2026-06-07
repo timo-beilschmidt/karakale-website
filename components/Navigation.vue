@@ -8,33 +8,33 @@
             </li>
 
             <li class="lavel-1">
-                <n-link to="/leistungen">
+                <n-link to="/leistungen/">
                     <span>Leistungen</span>
                 </n-link>
             </li>
 
             <li class="lavel-1">
-                <n-link to="/galerie">
+                <n-link to="/galerie/">
                     <span>Galerie</span>
                 </n-link>
             </li>
 
             <li class="lavel-1">
-                <n-link to="/about">
+                <n-link to="/about/">
                     <span>Über Uns</span>
                 </n-link>
             </li>
 
             <li class="lavel-1">
-                <n-link to="/kontakt">
+                <n-link to="/kontakt/">
                     <span>Kontakt</span>
                 </n-link>
             </li><li class="lavel-1">
-                <n-link to="/datenschutz">
+                <n-link to="/datenschutz/">
                     <span>Datenschutz</span>
                 </n-link>
             </li><li class="lavel-1">
-                <n-link to="/impressum">
+                <n-link to="/impressum/">
                     <span>Impressum</span>
                 </n-link>
             </li>

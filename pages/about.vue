@@ -43,6 +43,8 @@
 </template>
 
 <script>
+    import { createPageHead } from '@/utils/seo';
+
     export default {
         components: {
             HeaderAbout: () => import('@/components/HeaderAbout'),
@@ -71,52 +73,17 @@
         },
 
         head() {
-            const baseUrl = 'https://kfzgutachten-karakale.de';
-            const pageUrl = baseUrl + '/about';
-            
-            return {
-                title: 'Über Uns - Kfz Gutachten Karakale',
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: 'Erfahren Sie mehr über das Kfz Prüfbüro Karakale in Bonn. Unser Team, unsere Kompetenz und langjährige Erfahrung in Kfz Gutachten und Hauptuntersuchungen. Partner der TÜV NORD.'
-                    },
-                    {
-                        hid: 'keywords',
-                        name: 'keywords',
-                        content: 'Über uns, Kfz Prüfbüro Bonn, Kfz Gutachten Team, TÜV Partner Bonn, Prüfbüro Geschichte'
-                    },
-                    {
-                        hid: 'og:title',
-                        property: 'og:title',
-                        content: 'Über Uns - Kfz Gutachten Karakale'
-                    },
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: 'Erfahren Sie mehr über das Kfz Prüfbüro Karakale in Bonn. Unser Team und unsere Kompetenz.'
-                    },
-                    {
-                        hid: 'og:url',
-                        property: 'og:url',
-                        content: pageUrl
-                    },
-                    {
-                        hid: 'twitter:title',
-                        name: 'twitter:title',
-                        content: 'Über Uns - Kfz Gutachten Karakale'
-                    },
-                    {
-                        hid: 'twitter:description',
-                        name: 'twitter:description',
-                        content: 'Erfahren Sie mehr über das Kfz Prüfbüro Karakale in Bonn.'
-                    },
+            return createPageHead({
+                title: 'Über uns - Kfz Gutachten Karakale Bonn',
+                description: 'Erfahren Sie mehr über das Kfz Prüfbüro Karakale in Bonn: Erfahrung, Sachverständigenkompetenz, Hauptuntersuchungen und Gutachten als Partner der TÜV NORD.',
+                path: '/about/',
+                keywords: 'Kfz Prüfbüro Bonn, Kfz Gutachten Team Bonn, TÜV Partner Bonn, Prüfbüro Karakale',
+                image: '/img/other/ZOE_cut.webp',
+                breadcrumbs: [
+                    { name: 'Startseite', path: '/' },
+                    { name: 'Über uns', path: '/about/' },
                 ],
-                link: [
-                    { rel: 'canonical', href: pageUrl }
-                ]
-            }
+            });
         },
     };
 </script>

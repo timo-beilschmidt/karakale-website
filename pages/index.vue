@@ -38,6 +38,7 @@
 </template>
 
 <script>
+    import { createPageHead } from '@/utils/seo';
 
     export default {
         components: {
@@ -70,145 +71,22 @@
         },
 
         head() {
-            const baseUrl = 'https://kfzgutachten-karakale.de';
-            const pageUrl = baseUrl + this.$route.path;
-            
-            return {
-                title: 'Hauptuntersuchung (TÜV, HU) - Kfz Gutachten Karakale',
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: 'Hauptuntersuchung (TÜV/HU) beim Kfz Prüfbüro Karakale in Bonn. Professionelle TÜV-Prüfungen und Gutachten für Ihr Fahrzeug. Schnelle Termine, kompetente Beratung. Partner der TÜV NORD.'
-                    },
-                    {
-                        hid: 'keywords',
-                        name: 'keywords',
-                        content: 'TÜV Hauptuntersuchung, HU Prüfung, Kfz Gutachten Bonn, TÜV Prüfung Bonn, Hauptuntersuchung Termin, TÜV Nord Partner'
-                    },
-                    // Open Graph
-                    {
-                        hid: 'og:title',
-                        property: 'og:title',
-                        content: 'Hauptuntersuchung (TÜV, HU) - Kfz Gutachten Karakale Bonn'
-                    },
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: 'Hauptuntersuchung (TÜV/HU) beim Kfz Prüfbüro Karakale in Bonn. Professionelle TÜV-Prüfungen und Gutachten. Partner der TÜV NORD.'
-                    },
-                    {
-                        hid: 'og:image',
-                        property: 'og:image',
-                        content: baseUrl + '/favicon_logo.png'
-                    },
-                    {
-                        hid: 'og:url',
-                        property: 'og:url',
-                        content: pageUrl
-                    },
-                    // Twitter Card
-                    {
-                        hid: 'twitter:title',
-                        name: 'twitter:title',
-                        content: 'Hauptuntersuchung (TÜV, HU) - Kfz Gutachten Karakale'
-                    },
-                    {
-                        hid: 'twitter:description',
-                        name: 'twitter:description',
-                        content: 'Hauptuntersuchung (TÜV/HU) beim Kfz Prüfbüro Karakale in Bonn. Professionelle TÜV-Prüfungen und Gutachten.'
-                    },
-                    {
-                        hid: 'twitter:image',
-                        name: 'twitter:image',
-                        content: baseUrl + '/favicon_logo.png'
-                    },
+            return createPageHead({
+                title: 'Hauptuntersuchung (TÜV, HU) und Kfz Gutachten in Bonn',
+                description: 'Hauptuntersuchung (TÜV/HU), Unfallgutachten, Wertgutachten und Oldtimer-Gutachten beim Kfz Prüfbüro Karakale in Bonn. Partner der TÜV NORD.',
+                path: '/',
+                keywords: 'TÜV Hauptuntersuchung Bonn, HU Prüfung Bonn, Kfz Gutachten Bonn, Unfallgutachten Bonn, TÜV NORD Partner',
+                image: '/img/other/Pruefer_unter_Auto_scaled.webp',
+                breadcrumbs: [
+                    { name: 'Startseite', path: '/' },
                 ],
-                link: [
-                    {
-                        rel: 'canonical',
-                        href: pageUrl
-                    }
+                services: [
+                    { name: 'Hauptuntersuchung (TÜV/HU)', description: 'HU-Termine beim Prüfbüro Karakale in Bonn.' },
+                    { name: 'Unfallgutachten', description: 'Schadengutachten und Beweissicherung nach einem Unfall.' },
+                    { name: 'Wertgutachten', description: 'Nachvollziehbare Bewertung von Fahrzeugwerten.' },
+                    { name: 'Oldtimer-Gutachten', description: 'Gutachten für Klassiker und H-Kennzeichen.' },
                 ],
-                __dangerouslyDisableSanitizers: ['script'],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        innerHTML: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "LocalBusiness",
-                            "name": "Kfz Gutachten und Prüfbüro Karakale",
-                            "description": "Kfz Gutachten und Prüfbüro für Hauptuntersuchungen (TÜV) und Gutachten jeder Art in Bonn",
-                            "url": baseUrl,
-                            "telephone": "+49-228-96699180",
-                            "email": "info@ing-karakale.de",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Siemensstr. 1",
-                                "addressLocality": "Bonn",
-                                "postalCode": "53121",
-                                "addressCountry": "DE"
-                            },
-                            "geo": {
-                                "@type": "GeoCoordinates",
-                                "latitude": "50.7374",
-                                "longitude": "7.0982"
-                            },
-                            "openingHours": [
-                                "Mo-Fr 08:00-18:00",
-                                "Sa 09:00-14:00"
-                            ],
-                            "priceRange": "$$",
-                            "image": baseUrl + "/favicon_logo.png",
-                            "areaServed": {
-                                "@type": "City",
-                                "name": "Bonn"
-                            },
-                            "hasOfferCatalog": {
-                                "@type": "OfferCatalog",
-                                "name": "Kfz Dienstleistungen",
-                                "itemListElement": [
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Hauptuntersuchung (TÜV/HU)"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Oldtimer Gutachten"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Unfallgutachten"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "e-Auto Gutachten"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Wertgutachten"
-                                        }
-                                    }
-                                ]
-                            }
-                        })
-                    }
-                ]
-            }
+            });
         },
     };
 </script>

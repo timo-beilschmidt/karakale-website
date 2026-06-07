@@ -11,13 +11,13 @@
                     <div class="modern-service wow move-up">
                         <h5 class="heading heading-h5">Leistungen &amp; Service</h5>
                         <div class="bkseparator--20"></div>
-                        <h5 class="heading heading-h5 body-color line-height-1-62">Wenn Sie Wert auf objektive, kompetente, schnelle und fachmännische Urteile legen, sind Sie hier genau richtig.</h5>
+                        <h5 class="heading heading-h5 body-color line-height-1-62">Wenn Sie Wert auf objektive, kompetente, schnelle und fachmännische Einschätzungen legen, sind Sie hier genau richtig.</h5>
                         <div class="bkseparator--30"></div>
                         <p class="bk_pra">Egal ob Pkw, Lkw, Oldtimer, Motorrad, Motorroller, Sonder-Kfz oder sonstiges Fahrzeug. Wir begutachten jedes Kfz. Auch die Schadenhöhe ist zur Erstellung des Gutachtens für unsere Kfz-Gutachter unerheblich.<br>
                         Die Abrechnung unserer Gutachten erfolgt direkt mit der Versicherung, eine Vorauszahlung ist nicht notwendig.<br>
                         Die Rechtsprechung besagt, es darf bis zu der Bagatellschadengrenze von ca. 750,- Euro kein Kfz-Gutachter eingeschaltet werden. Bei Schäden unterhalb dieser Bagatellschadengrenze erstellen wir einen Kostenvoranschlag. So lohnt sich auch schon bei einer Beule, einem Kratzer oder einer anderen geringfügigen Beschädigung an Ihrem Auto der Besuch in unserem Haus. Um den Rest kümmern wir uns.<br><br>
-                        Falle der ungeklärten Schuldfrage nach einem Unfall mit Ihrem Kfz fertigen wir kostenlos eine Beweissicherung für Sie durch. Hierzu erstellen wir Lichtbilder von Ihrem Kfz und den unfallbedingten Beschädigungen, notieren uns sämtliche relevanten Daten zum Unfallgeschehen und speichern diese vorerst in unserem Rechnersystem ab.<br>
-                        <strong>Seit neustem bieten wir auch Hauptuntersuchungen und Eintragungen an.</strong></p>
+                        Im Falle einer ungeklärten Schuldfrage nach einem Unfall mit Ihrem Kfz fertigen wir eine Beweissicherung für Sie an. Hierzu erstellen wir Lichtbilder von Ihrem Kfz und den unfallbedingten Beschädigungen, notieren sämtliche relevanten Daten zum Unfallgeschehen und dokumentieren diese nachvollziehbar.<br>
+                        <strong>Außerdem bieten wir Hauptuntersuchungen, Eintragungen, Gasanlagenprüfungen und Vollabnahmen an.</strong></p>
                     </div>
                 </div>
             </div>

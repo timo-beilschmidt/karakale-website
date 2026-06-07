@@ -18,7 +18,12 @@
         <div class="content">
             <h4>{{ service.heading }}</h4>
             <p v-html="service.desc"></p>
-            <n-link :to="getLink(service)" class="service-btn">
+            <n-link
+                :to="getLink(service)"
+                class="service-btn"
+                data-analytics-event="select_service"
+                :data-service-name="service.heading"
+            >
                 <span>Weitere Details</span> 
                 <i class="fa fa-arrow-right"></i>
             </n-link>

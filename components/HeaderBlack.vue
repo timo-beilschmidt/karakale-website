@@ -31,7 +31,13 @@
                                 </div> -->
                                 <!-- End Popup Search Wrap -->
                                 <div class="tuev-logo">
-                                    <a href="https://www.tuev-nord.de/de/">
+                                    <a
+                                        href="https://www.tuev-nord.de/de/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        data-analytics-event="outbound_click"
+                                        data-outbound-name="TÜV NORD"
+                                    >
                                         <img src="/img/other/Logo_TUEV_NORD_Partner.jpg" alt="Logo von dem Partner TÜV Nord für Hauptuntersuchungen.">
                                     </a>
                                 </div>

@@ -35,23 +35,35 @@
                     >
                   </p>
                   <p class="bk_pra line-height-2-22 text-white">
-                    <a href="tel::022896699180">Telefon: 0228-96699180</a>
+                    <a href="tel:022896699180">Telefon: 0228-96699180</a>
                   </p>
                   <p class="bk_pra line-height-2-22 text-white">
-                    <a href="tel::015737154376">Mobil: 01573-7154376</a>
+                    <a href="tel:015737154376">Mobil: 01573-7154376</a>
                   </p>
                 </div>
                 <div class="social-share social--transparent text-white">
-                  <a href="#" target="_blank">
+                  <a
+                    href="https://www.facebook.com/CarKarakale/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                  >
                     <i class="fab fa-facebook"></i>
                   </a>
                   <a
                     href="https://www.instagram.com/gutachten.karakale/"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
                   >
                     <i class="fab fa-instagram"></i>
                   </a>
-                  <a href="https://wa.me/4915737154376" target="_blank">
+                  <a
+                    href="https://wa.me/4915737154376"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                  >
                     <i class="fab fa-whatsapp"></i>
                   </a>
                 </div>

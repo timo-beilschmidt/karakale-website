@@ -6,7 +6,7 @@
                     <div class="bk-title--default text-left">
                         <h5 class="heading heading-h5 theme-color"></h5>
                         <div class="bkseparator--30"></div>
-                        <h2 class="heading heading-h3">Datenschutzerklärung</h2>
+                        <h1 class="heading heading-h3">Datenschutzerklärung</h1>
                     </div>
                 </div>
             </div>

@@ -8,13 +8,13 @@
             <!-- <img src="/img/slider/creative-agency-wave.png" alt="wave icon"> -->
             <a
               href="https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450&cHash=1bb2662b098812ec6d9a0abc7387d3a7"
+              class="brook-btn bk-btn-theme btn-sd-size btn-rounded space-between hero-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics-event="generate_lead"
+              data-lead-method="appointment"
             >
-              <button
-                type="submit"
-                class="brook-btn bk-btn-theme btn-sd-size btn-rounded space-between hero-btn"
-              >
-                Jetzt Termin vereinbaren
-              </button>
+              Jetzt Termin vereinbaren
             </a>
             <!-- <h6>WENN ES MAL KRACHT ODER DIE PLAKETTE FEHLT...</h6> -->
           </div>
@@ -29,7 +29,13 @@
         class="social-icon icon-border-rounded icon-size-medium social-vertical text-center"
       >
         <li class="facebook">
-          <a href="#" class="link brook-btn" aria-label="Facebook">
+          <a
+            href="https://www.facebook.com/CarKarakale/"
+            class="link brook-btn"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fab fa-facebook"></i>
           </a>
         </li>
@@ -38,13 +44,15 @@
             href="https://www.instagram.com/gutachten.karakale/"
             class="link brook-btn"
             aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i class="fab fa-instagram"></i>
           </a>
         </li>
         <li class="mail">
           <a
-            href="mailto: info@ing-karakale.de"
+            href="mailto:info@ing-karakale.de"
             class="link brook-btn"
             aria-label="E-Mail"
           >
@@ -56,6 +64,8 @@
             href="https://wa.me/4915737154376"
             class="link brook-btn"
             aria-label="Whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i class="fab fa-whatsapp"></i>
           </a>

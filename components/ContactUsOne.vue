@@ -19,17 +19,17 @@
 
                         <ul class="social-icon icon-size-medium text-dark text-left tooltip-layout move-up wow">
                             <li class="facebook">
-                                <a href="https://www.facebook.com/CarKarakale/" class="link hint--bounce hint--top hint--theme" aria-label="Facebook">
+                                <a href="https://www.facebook.com/CarKarakale/" class="link hint--bounce hint--top hint--theme" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-facebook"></i>
                                 </a>
                             </li>
                             <li class="instagram">
-                                <a href="https://www.instagram.com/gutachten.karakale/" class="link hint--bounce hint--top hint--theme" aria-label="Instagram">
+                                <a href="https://www.instagram.com/gutachten.karakale/" class="link hint--bounce hint--top hint--theme" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
                             <li class="whatsapp2">
-                                <a href="https://wa.me/4915737154376" class="link hint--bounce hint--top hint--theme" aria-label="Whatsapp">
+                                <a href="https://wa.me/4915737154376" class="link hint--bounce hint--top hint--theme" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
                             </li>

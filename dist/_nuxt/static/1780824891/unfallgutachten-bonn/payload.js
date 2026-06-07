@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/unfallgutachten-bonn", {data:[{}],fetch:{},mutations:void 0});

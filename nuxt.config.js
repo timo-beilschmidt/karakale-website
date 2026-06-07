@@ -1,3 +1,30 @@
+const GTM_ID = 'GTM-WB4L3K8';
+
+const consentModeScript = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    functionality_storage: 'denied',
+    personalization_storage: 'denied',
+    security_storage: 'granted',
+    wait_for_update: 500
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', true);
+`;
+
+const googleTagManagerScript = `
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');
+`;
+
 export default {
 
     target: 'static',
@@ -10,19 +37,16 @@ export default {
     sitemap: {
         hostname: 'https://kfzgutachten-karakale.de',
         gzip: true,
-        routes: [
-            '/',
-            '/about/',
-            '/kontakt/',
-            '/leistungen/',
-            '/galerie/',
-            '/datenschutz/',
-            '/impressum/'
+        trailingSlash: true,
+        exclude: [
+            '/datenschutz',
+            '/datenschutz/**',
+            '/impressum',
+            '/impressum/**'
         ],
         defaults: {
             changefreq: 'monthly',
-            priority: 1,
-            lastmod: new Date()
+            priority: 0.8
         }
     },
 
@@ -60,24 +84,21 @@ export default {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon_logo.png' },
             { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon_logo.png' },
-            { rel: 'canonical', href: 'https://kfzgutachten-karakale.de' },
             { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
             { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true }
         ],
+        __dangerouslyDisableSanitizers: ['script'],
         script: [
-            // Google Consent Mode - defer to avoid render blocking
             {
-                src: "/js/consent.js",
-                "data-cookieconsent": "ignore",
-                defer: true,
+                hid: 'google-consent-mode',
+                innerHTML: consentModeScript,
+                'data-cookieconsent': 'ignore'
             },
-            // Google Analytics Code - defer to avoid render blocking
             {
-                src: "https://www.googletagmanager.com/gtag/js?id=GTM-WB4L3K8",
-                defer: true,
+                hid: 'google-tag-manager',
+                innerHTML: googleTagManagerScript,
+                'data-cookieconsent': 'ignore'
             },
-            // Import analitics.js file - defer to avoid render blocking
-            { src: "/js/analytics.js", defer: true },
         ]
     },
 
@@ -90,6 +111,7 @@ export default {
 
     router: {
         linkExactActiveClass: 'active-link',
+        trailingSlash: true,
     },
 /* 
     redirect: [
@@ -100,6 +122,7 @@ export default {
     */
     plugins: [
         '~/plugins/vue-awesome-swiper.js',
+        '~/plugins/analytics.client.js',
     ],
   
     /*

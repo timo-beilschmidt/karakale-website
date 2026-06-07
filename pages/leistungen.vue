@@ -13,6 +13,8 @@
 
         <ServiceIconBoxTwo />
 
+        <SeoFaq :items="faq" />
+
         <CallToAction />
 
         <Footer />
@@ -21,6 +23,23 @@
 </template>
 
 <script>
+    import { createPageHead } from '@/utils/seo';
+
+    const leistungenFaq = [
+        {
+            question: 'Welche Kfz Gutachten bietet Karakale in Bonn an?',
+            answer: 'Wir bieten unter anderem Unfallgutachten, Wertgutachten, Oldtimer-Gutachten, e-Auto Gutachten und Beweissicherung an.',
+        },
+        {
+            question: 'Kann ich bei Karakale auch eine Hauptuntersuchung machen lassen?',
+            answer: 'Ja. Als Partner der TÜV NORD bieten wir Hauptuntersuchungen in Bonn an.',
+        },
+        {
+            question: 'Wie erreiche ich das Prüfbüro?',
+            answer: 'Sie erreichen uns in der Siemensstr. 1 in 53121 Bonn, telefonisch unter 0228-96699180 oder per E-Mail an info@ing-karakale.de.',
+        },
+    ];
+
     export default {
         components: {
             HeaderElement: () => import('@/components/HeaderElement'),
@@ -29,6 +48,7 @@
             ServiceModernBreadcrumb: () => import('@/components/ServiceModernBreadcrumb'),
             ServiceModern: () => import('@/components/ServiceModern'),
             ServiceIconBoxTwo: () => import('@/components/sections/ServiceIconBoxTwo'),
+            SeoFaq: () => import('@/components/SeoFaq'),
             CallToAction: () => import('@/components/CallToAction'),
             Footer: () => import('@/components/Footer'),
         },
@@ -37,144 +57,31 @@
             return {
                 navOpen: false,
                 searchOpen: false,
+                faq: leistungenFaq,
             }
         },
 
         head() {
-            const baseUrl = 'https://kfzgutachten-karakale.de';
-            const pageUrl = baseUrl + '/leistungen';
-            
-            return {
-                title: 'Leistungen: Gutachten und TÜV (HU) - Karakale',
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: 'Unsere Leistungen: TÜV Hauptuntersuchung (HU), Oldtimer-Gutachten, Unfallgutachten, e-Auto Gutachten, Wertgutachten, Gasanlagenprüfung, Vollabnahme und mehr. Jetzt Termin vereinbaren.'
-                    },
-                    {
-                        hid: 'keywords',
-                        name: 'keywords',
-                        content: 'Kfz Gutachten, TÜV, Hauptuntersuchung, Oldtimer Gutachten, Unfallgutachten, e-Auto Gutachten, Wertgutachten, Gasanlagenprüfung, Vollabnahme'
-                    },
-                    {
-                        hid: 'og:title',
-                        property: 'og:title',
-                        content: 'Leistungen: Gutachten und TÜV (HU) - Karakale'
-                    },
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: 'Unsere Leistungen: TÜV Hauptuntersuchung, Oldtimer-Gutachten, Unfallgutachten, e-Auto Gutachten und mehr.'
-                    },
-                    {
-                        hid: 'og:url',
-                        property: 'og:url',
-                        content: pageUrl
-                    },
-                    {
-                        hid: 'twitter:title',
-                        name: 'twitter:title',
-                        content: 'Leistungen: Gutachten und TÜV (HU) - Karakale'
-                    },
-                    {
-                        hid: 'twitter:description',
-                        name: 'twitter:description',
-                        content: 'Unsere Leistungen: TÜV Hauptuntersuchung, Oldtimer-Gutachten, Unfallgutachten und mehr.'
-                    },
+            return createPageHead({
+                title: 'Leistungen: Kfz Gutachten und TÜV (HU) in Bonn',
+                description: 'Unsere Leistungen in Bonn: TÜV Hauptuntersuchung (HU), Oldtimer-Gutachten, Unfallgutachten, e-Auto Gutachten, Wertgutachten, Gasanlagenprüfung und Vollabnahme.',
+                path: '/leistungen/',
+                keywords: 'Kfz Gutachten Bonn, TÜV Bonn, Hauptuntersuchung Bonn, Oldtimer Gutachten Bonn, Unfallgutachten Bonn, e-Auto Gutachten, Wertgutachten',
+                image: '/img/other/leistung_2.webp',
+                breadcrumbs: [
+                    { name: 'Startseite', path: '/' },
+                    { name: 'Leistungen', path: '/leistungen/' },
                 ],
-                link: [
-                    { rel: 'canonical', href: pageUrl }
+                services: [
+                    { name: 'Hauptuntersuchung (TÜV/HU)', description: 'HU-Termine beim Prüfbüro Karakale in Bonn.' },
+                    { name: 'Unfallgutachten', description: 'Schadengutachten und Beweissicherung nach einem Unfall.' },
+                    { name: 'Oldtimer-Gutachten', description: 'Gutachten für Klassiker und H-Kennzeichen.' },
+                    { name: 'Wertgutachten', description: 'Bewertung des Marktwerts von Fahrzeugen.' },
+                    { name: 'Gasanlagenprüfung', description: 'Gasanlagenprüfung für Fahrzeuge, Wohnmobile und Boote.' },
+                    { name: 'Vollabnahme', description: 'Prüfung für Importfahrzeuge und lange stillgelegte Fahrzeuge.' },
                 ],
-                __dangerouslyDisableSanitizers: ['script'],
-                script: [
-                    {
-                        type: 'application/ld+json',
-                        innerHTML: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "Service",
-                            "serviceType": "Kfz Gutachten und Hauptuntersuchung",
-                            "provider": {
-                                "@type": "LocalBusiness",
-                                "name": "Kfz Gutachten und Prüfbüro Karakale",
-                                "address": {
-                                    "@type": "PostalAddress",
-                                    "streetAddress": "Siemensstr. 1",
-                                    "addressLocality": "Bonn",
-                                    "postalCode": "53121",
-                                    "addressCountry": "DE"
-                                }
-                            },
-                            "areaServed": {
-                                "@type": "City",
-                                "name": "Bonn"
-                            },
-                            "hasOfferCatalog": {
-                                "@type": "OfferCatalog",
-                                "name": "Kfz Dienstleistungen",
-                                "itemListElement": [
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Hauptuntersuchung (TÜV/HU)"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Oldtimer Gutachten"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Unfallgutachten"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "e-Auto Gutachten"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Wertgutachten"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Eintragungen"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Gasanlagenprüfung"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
-                                            "name": "Vollabnahme"
-                                        }
-                                    }
-                                ]
-                            }
-                        })
-                    }
-                ]
-            }
+                faq: this.faq,
+            });
         },
     };
 </script>

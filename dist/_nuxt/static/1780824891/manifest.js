@@ -1,0 +1,1 @@
+__NUXT_JSONP__("manifest.js", {routes:["\u002F","\u002Fabout","\u002Fimpressum","\u002Fkfz-gutachten-bonn","\u002Fhauptuntersuchung-tuev-bonn","\u002Fkontakt","\u002Fgalerie","\u002Fleistungen","\u002Fdatenschutz","\u002Funfallgutachten-bonn"]})

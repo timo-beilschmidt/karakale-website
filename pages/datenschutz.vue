@@ -43,6 +43,8 @@
 </template>
 
 <script>
+    import { createPageHead } from '@/utils/seo';
+
     export default {
         components: {
             HeaderBlack: () => import('@/components/HeaderBlack'),
@@ -63,42 +65,17 @@
         },
 
         head() {
-            const baseUrl = 'https://kfzgutachten-karakale.de';
-            const pageUrl = baseUrl + '/datenschutz';
-            
-            return {
+            return createPageHead({
                 title: 'Datenschutz - Kfz Gutachten Karakale',
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: 'Datenschutzerklärung des Kfz Prüfbüros Karakale. Informationen zum Schutz Ihrer persönlichen Daten.'
-                    },
-                    {
-                        hid: 'robots',
-                        name: 'robots',
-                        content: 'noindex, follow'
-                    },
-                    {
-                        hid: 'og:title',
-                        property: 'og:title',
-                        content: 'Datenschutz - Kfz Gutachten Karakale'
-                    },
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: 'Datenschutzerklärung des Kfz Prüfbüros Karakale.'
-                    },
-                    {
-                        hid: 'og:url',
-                        property: 'og:url',
-                        content: pageUrl
-                    },
+                description: 'Datenschutzerklärung des Kfz Prüfbüros Karakale. Informationen zum Schutz Ihrer persönlichen Daten.',
+                path: '/datenschutz/',
+                robots: 'noindex, follow',
+                image: '/img/logo/logo_karakale.svg',
+                breadcrumbs: [
+                    { name: 'Startseite', path: '/' },
+                    { name: 'Datenschutz', path: '/datenschutz/' },
                 ],
-                link: [
-                    { rel: 'canonical', href: pageUrl }
-                ]
-            }
+            });
         },
     };
 </script>
