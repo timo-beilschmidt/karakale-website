@@ -3,7 +3,7 @@
 This file covers the configuration work that happens outside the codebase after the latest site build is deployed.
 
 Site: `https://kfzgutachten-karakale.de/`  
-GTM container: `GTM-WB4L3K8`  
+GTM container: `GTM-5GGHFT2`  
 Analytics source of truth: Google Tag Manager  
 GA4 Measurement ID: `G-48VKMR1K4F`
 
@@ -27,7 +27,7 @@ Use `G-48VKMR1K4F` as the GA4 web stream measurement ID inside GTM.
 
 ## 2. GTM Container Setup
 
-Open Google Tag Manager and select container `GTM-WB4L3K8`.
+Open Google Tag Manager and select container `GTM-5GGHFT2`.
 
 ### Variables
 
@@ -272,8 +272,8 @@ Targets:
 Checks in browser DevTools:
 
 - [ ] LCP image uses `/img/generated/...webp`.
-- [ ] No `gtag.js?id=GTM-WB4L3K8` request exists.
-- [ ] `gtm.js?id=GTM-WB4L3K8` loads once.
+- [ ] No `gtag.js?id=GTM-5GGHFT2` request exists.
+- [ ] `gtm.js?id=GTM-5GGHFT2` loads once.
 - [ ] No Font Awesome, Ionicons, or Linea font files are loaded.
 - [ ] CSS and JS are served compressed by the host.
 - [ ] Long cache headers are set for hashed `/_nuxt/` assets.

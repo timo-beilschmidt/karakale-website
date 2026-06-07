@@ -1,4 +1,4 @@
-const GTM_ID = 'GTM-WB4L3K8';
+const GTM_ID = 'GTM-5GGHFT2';
 
 const consentModeScript = `
 window.dataLayer = window.dataLayer || [];

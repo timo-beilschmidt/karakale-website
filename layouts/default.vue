@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       iFrameCode:
-        '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB4L3K8" height="0" width="0" style="display: none; visibility: hidden"></iframe>',
+        '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GGHFT2" height="0" width="0" style="display: none; visibility: hidden"></iframe>',
     };
   },
 };
