@@ -5,9 +5,9 @@ This file covers the configuration work that happens outside the codebase after 
 Site: `https://kfzgutachten-karakale.de/`  
 GTM container: `GTM-WB4L3K8`  
 Analytics source of truth: Google Tag Manager  
-GA4 Measurement ID: `G-XXXXXXXXXX`
+GA4 Measurement ID: `G-48VKMR1K4F`
 
-Replace `G-XXXXXXXXXX` with the real GA4 web stream measurement ID.
+Use `G-48VKMR1K4F` as the GA4 web stream measurement ID inside GTM.
 
 ## 1. Deploy And Smoke Test
 
@@ -35,7 +35,7 @@ Create one constant variable:
 
 | Variable name | Type | Value |
 | --- | --- | --- |
-| `GA4 Measurement ID` | Constant | `G-XXXXXXXXXX` |
+| `GA4 Measurement ID` | Constant | `G-48VKMR1K4F` |
 
 Create these Data Layer Variables. Keep the names exactly as shown.
 
