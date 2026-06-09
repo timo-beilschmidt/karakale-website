@@ -6,7 +6,13 @@
                     <div class="row mtn--50">
                         <div class="col-sm-6 wow move-up mt--50" v-for="service in data.services.slice(0, 4)" :key="service.id">
                             <div class="icon-box text-left no-border">
-                                <div class="inner">
+                                <component
+                                    :is="service.link ? 'n-link' : 'div'"
+                                    v-bind="service.link ? { to: service.link } : {}"
+                                    class="inner service-card-link"
+                                    :data-analytics-event="service.link ? 'select_service' : null"
+                                    :data-service-name="service.link ? service.heading : null"
+                                >
                                     <div class="icon">
                                         <SiteIcon
                                             v-if="service.icon" 
@@ -26,7 +32,7 @@
                                         <h5 class="heading heading-h5">{{ service.heading }}</h5>
                                         <p class="bk_pra">{{ service.desc }}</p>
                                     </div>
-                                </div>
+                                </component>
                             </div>
                         </div>
                     </div>
@@ -70,5 +76,14 @@
 <style lang="scss">
     .mtn--50 {
         margin-top: -50px;
+    }
+
+    .service-card-link {
+        color: inherit;
+        display: block;
+
+        &:hover {
+            color: inherit;
+        }
     }
 </style>

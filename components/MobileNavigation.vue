@@ -8,6 +8,17 @@
 
                 <li class="menu-item-has-children">
                     <n-link to="/leistungen/">Leistungen</n-link>
+                    <ul class="sub-menu">
+                        <li>
+                            <n-link to="/kfz-gutachten-bonn/">Kfz Gutachten</n-link>
+                        </li>
+                        <li>
+                            <n-link to="/unfallgutachten-bonn/">Unfallgutachten</n-link>
+                        </li>
+                        <li>
+                            <n-link to="/hauptuntersuchung-tuev-bonn/">TÜV/HU</n-link>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="menu-item-has-children">
