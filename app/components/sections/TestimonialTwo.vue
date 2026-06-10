@@ -1,0 +1,69 @@
+<template>
+    <div class="brook-testimonial-area bg_color--7">
+        <div class="row row--0 align-items-center">
+            <div class="col-lg-3 col-xl-5 text-center ptb-md--80 ptb-sm--80">
+                <div class="brook-section-title text-left title-max-width plr_sm--30 plr_md--40">
+                    <h3 class="heading heading-h3 text-white">Was man<br>über uns<br> sagt</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-xl-7">
+                <div class="brook-element-carousel testimonial-space-right testimonial-color-variation">
+                    <div class="testimonial-static-row">
+                        <div v-for="testimonial in data.testimonials" :key="testimonial.id">
+                            <div class="testimonial testimonial_style--1 hover-transparent space-large--topbottom bg-dark">
+                                <div class="content">
+                                    <p class="bk_pra" v-html="testimonial.text"></p>
+                                    <div class="testimonial-info">
+                                        <div class="post-thumbnail">
+                                            <img :src="testimonial.thumb" :alt="testimonial.alt" width="70" height="70" loading="lazy" decoding="async">
+                                        </div>
+                                        <div class="clint-info">
+                                            <h6>{{ testimonial.name }}</h6>
+                                            <span>{{ testimonial.position }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-quote">
+                                        <SiteIcon name="quote" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import SiteIcon from '@/components/SiteIcon';
+    import data from '../../data/testimonial.json';
+
+    export default {
+        components: {
+            SiteIcon,
+        },
+        data () {
+            return {
+                data,
+            }
+        }
+    };
+</script>
+
+<style lang="scss" scoped>
+.testimonial-static-row {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @media #{$md-layout} {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media #{$sm-layout} {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

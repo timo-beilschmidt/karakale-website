@@ -1,0 +1,98 @@
+{
+    "portfolioItems": [
+        {
+            "id": 1,
+            "image": "/img/generated/gallery-image-01-960.webp",
+            "heading": "Kratzer an einem Van (Hinten-Links)",
+            "slug": "the-language-of-designs-1",
+            "category": "Design",
+            "filterClass": "creative digital"
+        },
+        {
+            "id": 2,
+            "image": "/img/generated/gallery-dsc08203-960.webp",
+            "heading": "Werkstatt mit Oldtimer",
+            "slug": "b-sharp-high-end-audio-2",
+            "category": "Marketing",
+            "filterClass": "photography design"
+        },
+        {
+            "id": 3,
+            "image": "/img/generated/gallery-image-03-960.webp",
+            "heading": "VW I302 LS",
+            "slug": "smart-sound-system-3",
+            "category": "Photography",
+            "filterClass": "photography creative"
+        },
+        {
+            "id": 4,
+            "image": "/img/generated/gallery-image-04-960.webp",
+            "heading": "Smart mit seitlichem Schaden (rechts).",
+            "slug": "awe-inspiring-projects-4",
+            "category": "Life Style",
+            "filterClass": "design"
+        },
+        {
+            "id": 5,
+            "image": "/img/generated/gallery-image-05-960.webp",
+            "heading": "Firmenwagen Zoe",
+            "slug": "gifts-for-photography-5",
+            "category": "Design",
+            "filterClass": "creative"
+        },
+        {
+            "id": 6,
+            "image": "/img/generated/gallery-bild-sl-960.webp",
+            "heading": "Mercedes SL Oldtimer",
+            "slug": "enchanting-portrait-hacks-6",
+            "category": "Photography",
+            "filterClass": "digital"
+        },
+        {
+            "id": 7,
+            "image": "/img/generated/gallery-image-07-960.webp",
+            "heading": "BMW Totalschaden Front",
+            "slug": "digital-marketing-basics-7",
+            "category": "Design"
+        },
+        {
+            "id": 8,
+            "image": "/img/generated/gallery-image-08-960.webp",
+            "heading": "Peugeot mit Schaden an der Seite (Links).",
+            "slug": "measure-digital-progress-8",
+            "filterClass": "digital design"
+        },
+        {
+            "id": 9,
+            "image": "/img/generated/gallery-image-09-960.webp",
+            "heading": "Mercedes Stern",
+            "slug": "b-sharp-high-end-audio-9",
+            "category": "Design",
+            "filterClass": "digital"
+        },
+        {
+            "id": 10,
+            "image": "/img/generated/gallery-image-10-960.webp",
+            "heading": "Opel ohne Front",
+            "slug": "b-sharp-high-end-audio-10",
+            "category": "Design",
+            "filterClass": "digital"
+        },
+        {
+            "id": 11,
+            "image": "/img/generated/gallery-image-11-960.webp",
+            "heading": "Weißes Auto mit Schrammen (Hinten-Rechts)",
+            "slug": "b-sharp-high-end-audio-11",
+            "category": "Design",
+            "filterClass": "digital"
+        },
+        {
+            "id": 12,
+            "image": "/img/generated/gallery-img-9415-960.webp",
+            "heading": "Mercedes mit gebrochener Achse",
+            "slug": "b-sharp-high-end-audio-12",
+            "category": "Design",
+            "filterClass": "digital"
+        }
+    ]
+}

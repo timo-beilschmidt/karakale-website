@@ -1,36 +1,39 @@
 {
-    "name": "brook",
+    "name": "karakale-website",
     "version": "1.0.0",
-    "description": "Creative Multipurpose Vue Nuxt JS Template",
-    "author": "uzzal",
+    "description": "Static website for Kfz Gutachten Karakale",
     "private": true,
+    "type": "module",
+    "engines": {
+        "node": "^22.12.0 || ^24.11.0 || >=26.0.0"
+    },
     "scripts": {
-        "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
-        "build": "NODE_OPTIONS=--openssl-legacy-provider nuxt build",
-        "start": "nuxt start",
-        "generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate",
+        "dev": "nuxt dev",
+        "build": "nuxt build",
+        "start": "nuxt preview",
+        "preview": "nuxt preview",
+        "generate": "nuxt generate",
         "optimize:images": "node scripts/optimize-images.mjs",
-        "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-        "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+        "lint": "eslint .",
+        "typecheck": "nuxt typecheck"
     },
     "dependencies": {
-        "@nuxtjs/redirect-module": "^0.3.1",
-        "@nuxtjs/style-resources": "^1.2.1",
-        "bootstrap": "^4.6.2",
-        "nuxt": "^2.17.3",
-        "swiper": "^5.4.5",
-        "vue": "^2.7.14",
-        "vue-awesome-swiper": "^4.1.1",
-        "vue-fixed-header": "^3.2.15"
+        "@nuxt/scripts": "^1.2.1",
+        "@nuxtjs/sitemap": "^8.1.0",
+        "bootstrap": "^5.3.8",
+        "nuxt": "^4.4.8",
+        "vue": "^3.5.35"
     },
     "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^5.0.0",
-        "@nuxtjs/sitemap": "^2.4.0",
-        "core-js": "^3.49.0",
-        "push-dir": "^0.4.1",
-        "sass": "^1.69.5",
-        "sass-loader": "^10.4.1",
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.4.1",
+        "eslint-plugin-vue": "^10.9.2",
+        "globals": "^17.6.0",
+        "sass": "^1.100.0",
         "sharp": "^0.34.5",
-        "webpack": "^4.46.0"
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.61.0",
+        "vue-eslint-parser": "^10.4.1",
+        "vue-tsc": "^3.3.4"
     }
 }

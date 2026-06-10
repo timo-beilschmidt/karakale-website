@@ -1,0 +1,26 @@
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+
+    > .col,
+    > [class*='col-'] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

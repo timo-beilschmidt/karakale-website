@@ -1,0 +1,134 @@
+/* ======================
+    Service Css 
+=========================*/
+
+.service{
+    &.service--1{
+        &.theme-color{
+            background: $theme-color;
+            &::before{
+                border: 1px solid #000;
+            }
+            &:hover{
+                &::before{
+                    border: 2px solid #000 !important;
+                }
+            }
+            .content{
+    
+                a{
+                    &.service-btn{
+                        i{
+                            color: #222 !important;
+                        }
+                        &:hover{
+                            color: #222 !important;
+                            i{
+                                color: #222 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        position: relative;
+        padding: 60px 35px 64px;
+        background: #fff;
+        -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+        transition: all .3s cubic-bezier(.645,.045,.355,1);
+        z-index: 1;
+        &::before{
+            position: absolute;
+            content: "";
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #eee;
+            opacity: 1;
+            visibility: visible;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        &:hover{
+            -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+            box-shadow: 0 2px 30px rgba(0,0,0,.2);
+            &::before{
+                border-color: #0038E3;
+            }
+        }
+        .icons{
+            margin-bottom: 22px;
+            i,
+            .site-icon {
+                color: $theme-color;
+                font-size: 80px;
+            }
+        }
+        .content{
+            h4{
+                font-size: 18px;
+                line-height: 1.38;
+                margin-bottom: 18px;
+                color: $heading-color;
+                font-family: $body-font;
+                font-weight: 600;
+            }
+            p{
+                color: #333;
+                font-family: 'louis_george_caferegular';
+                letter-spacing: 0em;
+                line-height: 1.32;
+                font-size: 16px;
+            }
+
+            a{
+                &.service-btn{
+                    border: 0;
+                    background-color: transparent;
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #222;
+                    display: inline-block;
+                    margin-top: 46px;
+                    padding-right: 25px;
+                    transition: 0.3s;
+                    i,
+                    .site-icon {
+                        font-size: 12px;
+                        left: auto;
+                        right: auto;
+                        -webkit-transform: none;
+                        -ms-transform: none;
+                        transform: none;
+                        margin-left: 15px;
+                        color: $theme-color;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        color: #0038E3;
+                        i{
+                            color: #0038E3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bg-transparent{
+        background: transparent;
+        .content{
+            h4{
+                color: $white;
+            }
+            p{
+                color: $white;
+            }
+            a.service-btn{
+                color: $white;
+            }
+        }
+    }
+}

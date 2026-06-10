@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '24'
           cache: 'npm'
       
       - name: Install dependencies
@@ -36,15 +36,13 @@ jobs:
       
       - name: Generate static site
         run: npm run generate
-        env:
-          NODE_OPTIONS: '--openssl-legacy-provider'
 
       - name: Install Brotli
         run: sudo apt-get update && sudo apt-get install -y brotli
 
       - name: Precompress static text assets
         run: |
-          find dist -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' \) -print0 | while IFS= read -r -d '' file; do
+          find .output/public -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' \) -print0 | while IFS= read -r -d '' file; do
             gzip -9 -k -f "$file"
             brotli -f -q 11 "$file"
           done
@@ -52,19 +50,19 @@ jobs:
       - name: Prepare GitHub Pages files
         run: |
           if [ -f CNAME ]; then
-            cp CNAME dist/CNAME
+            cp CNAME .output/public/CNAME
           fi
-          if [ -f static/.htaccess ]; then
-            cp static/.htaccess dist/.htaccess
+          if [ -f public/.htaccess ]; then
+            cp public/.htaccess .output/public/.htaccess
           fi
-          touch dist/.nojekyll
+          touch .output/public/.nojekyll
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./dist
+          publish_dir: ./.output/public
           force_orphan: true
           keep_files: false
           commit_message: Deploy static site from ${{ github.sha }}

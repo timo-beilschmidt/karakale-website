@@ -1,0 +1,62 @@
+.manu-hamber {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 19px;
+    pointer-events: auto;
+
+    &.light-version {
+        color: #fff;
+    }
+
+    &.black-version {
+        color: #222;
+    }
+
+    div {
+        height: 18px;
+        pointer-events: auto;
+        position: relative;
+        width: 24px;
+
+        i {
+            background: currentColor;
+            height: 2px;
+            left: 0;
+            margin-top: -1px;
+            position: absolute;
+            top: 50%;
+            transition: all .3s cubic-bezier(.645,.045,.355,1);
+            width: 100%;
+
+            &::before,
+            &::after {
+                background: inherit;
+                content: "";
+                height: 100%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%);
+                transition: width .3s cubic-bezier(.645,.045,.355,1);
+                width: 100%;
+            }
+
+            &::before {
+                top: -8px;
+            }
+
+            &::after {
+                top: 8px;
+            }
+        }
+    }
+
+    &:hover {
+        div i {
+            &::before,
+            &::after {
+                width: 70%;
+            }
+        }
+    }
+}
