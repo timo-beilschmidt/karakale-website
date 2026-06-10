@@ -1,12 +1,5 @@
 <template>
-    <div class="main-container">
-
-        <HeaderBlack @togglenav="navOpen = !navOpen" @toggleSearch="searchOpen = !searchOpen" />
-
-        <OffCanvasMobileMenu :class="{'show-mobile-menu' : navOpen}" @togglenav="navOpen = !navOpen" />
-
-        <!-- <SearchPopup :class="{'search-popup-open' : searchOpen}" @toggleSearch="searchOpen = !searchOpen" /> -->
-
+    <main>
         <HeroAgency />
 
         <ServiceOne id="service" />
@@ -32,9 +25,7 @@
 
         <ContactUsOne />
 
-        <Footer />
-
-    </div>
+    </main>
 </template>
 
 <script>
@@ -42,8 +33,6 @@
 
     export default {
         components: {
-            HeaderBlack: () => import('@/components/HeaderBlack'),
-            OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
             HeroAgency: () => import('@/components/HeroAgency'),
             ServiceOne: () => import('@/components/sections/ServiceOne'),
             PortfolioOne: () => import('@/components/sections/PortfolioOne'),
@@ -52,18 +41,6 @@
             BrandLogoStyleOne: () => import('@/components/BrandLogoStyleOne'),
             CurveShape: () => import('@/components/CurveShape'),
             ContactUsOne: () => import('@/components/ContactUsOne'),
-            Footer: () => import('@/components/Footer'),
-        },
-
-        data() {
-            return {
-                navOpen: false,
-                searchOpen: false
-            }
-        },
-
-        mounted () {
-            document.body.classList.add('template-color-1', 'template-font-2')
         },
 
         head() {

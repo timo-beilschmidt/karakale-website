@@ -1,12 +1,5 @@
 <template>
-    <div class="main-container">
-
-        <HeaderAbout @togglenav="navOpen = !navOpen" @toggleSearch="searchOpen = !searchOpen" />
-
-        <OffCanvasMobileMenu :class="{'show-mobile-menu' : navOpen}" @togglenav="navOpen = !navOpen" />
-
-        <SearchPopup :class="{'search-popup-open' : searchOpen}" @toggleSearch="searchOpen = !searchOpen" />
-
+    <main>
         <AboutBreadcrumb />
 
         <WhatWeDo />
@@ -37,9 +30,7 @@
 
         <CallToAction />
 
-        <Footer />
-
-    </div>
+    </main>
 </template>
 
 <script>
@@ -47,27 +38,12 @@
 
     export default {
         components: {
-            HeaderAbout: () => import('@/components/HeaderAbout'),
-            OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
-            SearchPopup: () => import('@/components/SearchPopup'),
             AboutBreadcrumb: () => import('@/components/AboutBreadcrumb'),
             WhatWeDo: () => import('@/components/WhatWeDo'),
             FlexibleSlider: () => import('@/components/FlexibleSlider'),
             TestimonialTwo: () => import('@/components/sections/TestimonialTwo'),
             BrandLogoStyleOne: () => import('@/components/BrandLogoStyleOne'),
             CallToAction: () => import('@/components/CallToAction'),
-            Footer: () => import('@/components/Footer'),
-        },
-
-        data() {
-            return {
-                navOpen: false,
-                searchOpen: false,
-            }
-        },
-
-        mounted () {
-            document.body.classList.add('template-color-1', 'template-font-1')
         },
 
         head() {

@@ -5,7 +5,7 @@ import sharp from 'sharp';
 const OUTPUT_DIR = 'static/img/generated';
 
 const jobs = [
-    { src: 'static/img/other/Pruefer_unter_Auto_scaled.webp', name: 'pruefer-unter-auto', widths: [480, 960, 1440], quality: 78 },
+    { src: 'static/img/other/Pruefer_unter_Auto_scaled.webp', name: 'pruefer-unter-auto', widths: [480, 960, 1440], quality: 78, formats: ['webp', 'avif'] },
     { src: 'static/img/other/leistung_2.webp', name: 'leistung-2', widths: [480, 960, 1440], quality: 78 },
     { src: 'static/img/portfolio/bearbeitet/810_810.jpg', name: 'unfallgutachten-810', widths: [480, 810], quality: 78 },
     { src: 'static/img/other/bild_stern.webp', name: 'bild-stern', widths: [480, 960, 1440], quality: 78 },
@@ -34,19 +34,33 @@ for (const job of jobs) {
 
     for (const width of job.widths) {
         const targetWidth = Math.min(width, sourceWidth);
-        const output = path.join(OUTPUT_DIR, `${job.name}-${width}.webp`);
+        const formats = job.formats || ['webp'];
 
-        await sharp(job.src)
-            .resize({
-                width: targetWidth,
-                withoutEnlargement: true,
-            })
-            .webp({
-                effort: 5,
-                quality: job.quality,
-            })
-            .toFile(output);
+        for (const format of formats) {
+            const output = path.join(OUTPUT_DIR, `${job.name}-${width}.${format}`);
+            const pipeline = sharp(job.src)
+                .resize({
+                    width: targetWidth,
+                    withoutEnlargement: true,
+                });
 
-        console.log(`${output} (${targetWidth}px)`);
+            if (format === 'avif') {
+                await pipeline
+                    .avif({
+                        effort: 5,
+                        quality: Math.max(job.quality - 10, 45),
+                    })
+                    .toFile(output);
+            } else {
+                await pipeline
+                    .webp({
+                        effort: 5,
+                        quality: job.quality,
+                    })
+                    .toFile(output);
+            }
+
+            console.log(`${output} (${targetWidth}px)`);
+        }
     }
 }

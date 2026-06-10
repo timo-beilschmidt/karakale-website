@@ -1,12 +1,5 @@
 <template>
-    <div class="main-container">
-
-        <HeaderBlack @togglenav="navOpen = !navOpen" @toggleSearch="searchOpen = !searchOpen" />
-
-        <OffCanvasMobileMenu :class="{'show-mobile-menu' : navOpen}" @togglenav="navOpen = !navOpen" />
-
-        <!-- <SearchPopup :class="{'search-popup-open' : searchOpen}" @toggleSearch="searchOpen = !searchOpen" /> -->
-
+    <main>
         <!-- <AboutBreadcrumb /> -->
 
         <!-- <WhatWeDo /> -->
@@ -37,9 +30,7 @@
 
         <!-- <CallToAction /> -->
 
-        <Footer />
-
-    </div>
+    </main>
 </template>
 
 <script>
@@ -47,21 +38,7 @@
 
     export default {
         components: {
-            HeaderBlack: () => import('@/components/HeaderBlack'),
-            OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
             DatenschutzText: () => import('@/components/DatenschutzText'),
-            Footer: () => import('@/components/Footer'),
-        },
-
-        data() {
-            return {
-                navOpen: false,
-                searchOpen: false,
-            }
-        },
-
-        mounted () {
-            document.body.classList.add('template-color-1', 'template-font-1')
         },
 
         head() {

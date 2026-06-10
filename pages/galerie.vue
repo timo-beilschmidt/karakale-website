@@ -1,12 +1,5 @@
 <template>
-    <div class="main-container">
-
-        <HeaderBlack @togglenav="navOpen = !navOpen" @toggleSearch="searchOpen = !searchOpen" />
-
-        <OffCanvasMobileMenu :class="{'show-mobile-menu' : navOpen}" @togglenav="navOpen = !navOpen" />
-
-        <!-- <SearchPopup :class="{'search-popup-open' : searchOpen}" @toggleSearch="searchOpen = !searchOpen" /> -->
-
+    <main>
         <div class="breadcaump-area pt--130 pb--50 bg_color--1 breadcaump-title-bar">
             <div class="container">
                 <div class="row">
@@ -29,9 +22,7 @@
             </div>
         </div>
 
-        <Footer />
-
-    </div>
+    </main>
 </template>
 
 <script>
@@ -40,22 +31,13 @@
 
     export default {
         components: {
-            HeaderBlack: () => import('@/components/HeaderBlack'),
-            OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
             PortfolioItemCenterCaption: () => import('@/components/PortfolioItemCenterCaption'),
-            Footer: () => import('@/components/Footer'),
         },
         
         data () {
             return {
                 data,
-                navOpen: false,
-                searchOpen: false,
             }
-        },
-
-        mounted () {
-            document.body.classList.add('template-color-1', 'template-font-1')
         },
 
         head() {

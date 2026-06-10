@@ -1,10 +1,7 @@
 <template>
-    <div class="main-container">
-        <HeaderBlack @togglenav="navOpen = !navOpen" />
-        <OffCanvasMobileMenu :class="{ 'show-mobile-menu': navOpen }" @togglenav="navOpen = !navOpen" />
+    <main>
         <LocalSeoLanding :page="page" />
-        <Footer />
-    </div>
+    </main>
 </template>
 
 <script>
@@ -13,15 +10,11 @@ import { createPageHead } from '@/utils/seo';
 
 export default {
     components: {
-        HeaderBlack: () => import('@/components/HeaderBlack'),
-        OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
         LocalSeoLanding: () => import('@/components/LocalSeoLanding'),
-        Footer: () => import('@/components/Footer'),
     },
 
     data() {
         return {
-            navOpen: false,
             page: localSeoPages.kfzGutachtenBonn,
         };
     },

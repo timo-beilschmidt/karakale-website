@@ -18,10 +18,36 @@ gtag('set', 'url_passthrough', true);
 `;
 
 const googleTagManagerScript = `
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+(function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    var gtmLoaded=false;
+    function loadGtm(){
+        if(gtmLoaded || d.getElementById('karakale-gtm')){return;}
+        gtmLoaded=true;
+        w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.id='karakale-gtm';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    }
+    function loadWhenIdle(){
+        if('requestIdleCallback' in w){
+            w.requestIdleCallback(loadGtm,{timeout:3000});
+        }else{
+            w.setTimeout(loadGtm,2500);
+        }
+    }
+    w.loadKarakaleGTM=loadGtm;
+    try{
+        if(w.localStorage && w.localStorage.getItem('vue-cookie-accept-decline-myCookiePanel')==='accept'){
+            loadGtm();
+        }else{
+            loadWhenIdle();
+        }
+    }catch(e){
+        loadWhenIdle();
+    }
 })(window,document,'script','dataLayer','${GTM_ID}');
 `;
 
@@ -31,6 +57,10 @@ export default {
 
     generate: {
         fallback: true
+    },
+
+    render: {
+        resourceHints: false
     },
 
     // Sitemap configuration
@@ -106,13 +136,19 @@ export default {
     ** Global CSS
     */
     css: [
-        'bootstrap/dist/css/bootstrap.css',
+        'bootstrap/dist/css/bootstrap-reboot.css',
+        'bootstrap/dist/css/bootstrap-grid.css',
         'assets/scss/style.scss',
     ],
 
     router: {
         linkExactActiveClass: 'active-link',
         trailingSlash: true,
+    },
+
+    pageTransition: {
+        name: 'page',
+        mode: 'out-in',
     },
 /* 
     redirect: [
@@ -123,6 +159,7 @@ export default {
     */
     plugins: [
         '~/plugins/analytics.client.js',
+        '~/plugins/route-prefetch.client.js',
     ],
   
     /*

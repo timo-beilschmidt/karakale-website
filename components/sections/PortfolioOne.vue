@@ -33,7 +33,7 @@
                         <div class="port-overlay-info">
                             <div class="hover-action">
                                 <h3 class="post-overlay-title">
-                                    <n-link to="leistungen">
+                                    <n-link to="/leistungen/">
                                         <p>Wir erstellen Ihr Gutachten</p>
                                         <ul>
                                             <li>persönlich</li>
@@ -62,7 +62,7 @@
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
                                         <h3 class="post-overlay-title">
-                                            <n-link to="leistungen">
+                                            <n-link to="/leistungen/">
                                                 Aufnahme des Schadens direkt vor Ort
                                             </n-link>
                                         </h3>
@@ -81,7 +81,7 @@
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
                                         <h3 class="post-overlay-title">
-                                             <n-link to="leistungen">
+                                             <n-link to="/leistungen/">
                                                Wir beraten Sie im Schadensfall
                                             </n-link>
                                         </h3>
@@ -100,7 +100,7 @@
                                 <div class="port-overlay-info">
                                     <div class="hover-action">
                                         <h3 class="post-overlay-title">
-                                            <n-link to="galerie">
+                                            <n-link to="/galerie/">
                                                 Kein Schaden ist zu klein
                                             </n-link>
                                         </h3>

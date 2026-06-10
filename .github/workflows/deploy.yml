@@ -38,11 +38,24 @@ jobs:
         run: npm run generate
         env:
           NODE_OPTIONS: '--openssl-legacy-provider'
+
+      - name: Install Brotli
+        run: sudo apt-get update && sudo apt-get install -y brotli
+
+      - name: Precompress static text assets
+        run: |
+          find dist -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' \) -print0 | while IFS= read -r -d '' file; do
+            gzip -9 -k -f "$file"
+            brotli -f -q 11 "$file"
+          done
       
       - name: Prepare GitHub Pages files
         run: |
           if [ -f CNAME ]; then
             cp CNAME dist/CNAME
+          fi
+          if [ -f static/.htaccess ]; then
+            cp static/.htaccess dist/.htaccess
           fi
           touch dist/.nojekyll
       

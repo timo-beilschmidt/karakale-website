@@ -41,7 +41,7 @@
         props: ['service'],
         methods: {
             getLink(service) {
-                return service.link || "/leistungen";
+                return service.link || "/leistungen/";
             },
         },
     };

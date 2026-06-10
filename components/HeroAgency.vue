@@ -1,5 +1,25 @@
 <template>
   <div data-overlay="2" class="home-creative-agency">
+    <picture class="hero-media" aria-hidden="true">
+      <source
+        type="image/avif"
+        srcset="/img/generated/pruefer-unter-auto-480.avif 480w, /img/generated/pruefer-unter-auto-960.avif 960w, /img/generated/pruefer-unter-auto-1440.avif 1440w"
+        sizes="100vw"
+      >
+      <source
+        type="image/webp"
+        srcset="/img/generated/pruefer-unter-auto-480.webp 480w, /img/generated/pruefer-unter-auto-960.webp 960w, /img/generated/pruefer-unter-auto-1440.webp 1440w"
+        sizes="100vw"
+      >
+      <img
+        src="/img/generated/pruefer-unter-auto-1440.webp"
+        alt=""
+        width="1440"
+        height="960"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </picture>
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -118,6 +138,7 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
+  overflow: hidden;
   background-color: #111c81;
   background-image: url("/img/generated/pruefer-unter-auto-1440.webp");
   @media #{$md-layout} {
@@ -127,6 +148,23 @@ export default {
   @media #{$sm-layout} {
     height: 600px;
     background-image: url("/img/generated/pruefer-unter-auto-480.webp");
+  }
+  .hero-media {
+    inset: 0;
+    position: absolute;
+    z-index: 0;
+
+    img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
+  }
+  .container,
+  .hero-social {
+    z-index: 3;
   }
   .hero-title {
     //visibility: hidden;

@@ -290,6 +290,10 @@ export default {
           wait_for_update: 500,
         });
       }
+
+      if (typeof window !== "undefined" && window.loadKarakaleGTM) {
+        window.loadKarakaleGTM();
+      }
     },
     denyAnalyticsConsent() {
       if (typeof window !== "undefined" && window.gtag) {
