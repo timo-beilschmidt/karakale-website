@@ -147,7 +147,7 @@ export default {
         image: '/img/generated/pruefer-unter-auto-1440.webp',
         imageAlt: 'Prüfingenieur unter einem Fahrzeug bei der Hauptuntersuchung in Bonn',
         ctaLabel: 'HU-Termin vereinbaren',
-        ctaHref: 'https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450&cHash=1bb2662b098812ec6d9a0abc7387d3a7',
+        ctaHref: 'https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450',
         ctaExternal: true,
         ctaLeadMethod: 'appointment',
         sections: [

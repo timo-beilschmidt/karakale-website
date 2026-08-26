@@ -27,7 +27,7 @@
             <h1 class="hero-title">Ihre TÜV Prüfstelle in Bonn</h1>
             
             <a
-              href="https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450&cHash=1bb2662b098812ec6d9a0abc7387d3a7"
+              href="https://www.tuev-nord.de/de/stationen/termin-vereinbaren/?stationId=450"
               class="brook-btn bk-btn-theme btn-sd-size btn-rounded space-between hero-btn"
               target="_blank"
               rel="noopener noreferrer"
